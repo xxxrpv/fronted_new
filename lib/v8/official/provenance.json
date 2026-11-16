@@ -1,0 +1,62 @@
+{
+  "source": "网站设计/EmbodiX官网-交付版/dist",
+  "scope": "Seven-chapter solution reader only; project content and callbacks supplied by Embodex.",
+  "adaptations": [
+    "Document-scoped runtime, no report-authored scripts",
+    "Frozen project content adapter",
+    "One actual project selector",
+    "Missing numeric assumptions stay empty",
+    "Parent-owned download callbacks",
+    "Observer and animation-frame disposal"
+  ],
+  "files": [
+    {
+      "file": "styles.css",
+      "sha256": "35c561fdc60adab209a3c1bcc2dc06ded564c5512b1cd8a9f1b139081ca96571"
+    },
+    {
+      "file": "site.css",
+      "sha256": "93f93e79fae59e7df10cec9aadeb3b1fff16cdcfa7cbe9071acc79579f7fa03c"
+    },
+    {
+      "file": "solution.css",
+      "sha256": "01ca434a3f6c8f7ee6edbfa92171051da419e27540d99c67094b963778de322e"
+    },
+    {
+      "file": "solution-business.css",
+      "sha256": "50a16f98f6ef46297d61d401a46508dcd9cbcc155ff4f47dbbd57a37e6fad94d"
+    },
+    {
+      "file": "solution-scenarios.css",
+      "sha256": "08422099472d4a49535d400e9b11b3023895b7504c78ce2557dde01fd580aa0d"
+    },
+    {
+      "file": "i18n.css",
+      "sha256": "8d223ab1453c596b954797d8b303451e71fb89ac5514620a83975023048400b3"
+    },
+    {
+      "file": "solution-data.js",
+      "sha256": "e94df9fa24ce851110cc545764572c83f747acf77734934d90aac0efa45c2d85"
+    },
+    {
+      "file": "solution-scenarios.js",
+      "sha256": "4d7d94a75f5c64f432a706d195f06227b2352d604cd57421776a096276823a31"
+    },
+    {
+      "file": "solution-business.js",
+      "sha256": "41425c9d5c93782896590812568e1f4ab82059e242362a17ce86fe483fcc9fc6"
+    },
+    {
+      "file": "solution-business-ui.js",
+      "sha256": "bb0761c0a3579f6811020bff8b7f5fda5d136d45979540e57cf5c70da90f29c8"
+    },
+    {
+      "file": "solution.js",
+      "sha256": "ba7a9dbe61390a091e52863773fbc5c14f0271612989ebbf7cbcfdc2d24eb036"
+    },
+    {
+      "file": "i18n.js",
+      "sha256": "7d3c55c0874c056aa0a79a41d81597058e6bcbfcf57a5af8d830bd67012c2473"
+    }
+  ]
+}

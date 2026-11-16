@@ -1,0 +1,580 @@
+/* Reader shell follows the supplied official complete-solution expansion.
+   Document typography/chapters live inside the saved HTML, so exports match. */
+.design-report-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 130;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background: #404a5445;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  font:
+    14px/1.65 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Microsoft YaHei",
+    sans-serif;
+  color: #3b3d3c;
+}
+.design-report-dialog {
+  width: min(1320px, 100%);
+  height: calc(100dvh - 44px);
+  max-height: 1100px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #fbfcfc;
+  border: 1px solid #d6d8d7;
+  border-top-color: #fff;
+  border-radius: 23px;
+  overflow: hidden;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 30px 100px #40444838;
+  outline: none;
+}
+.design-report-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 22px;
+  border-bottom: 1px solid #dae1e8;
+  background: #ffffffb8;
+  box-shadow: inset 0 1px 0 #fff;
+  flex-shrink: 0;
+}
+.design-report-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.design-report-title h2 {
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -0.3px;
+  margin: 0;
+  color: #424c56;
+}
+.design-report-title p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: #838886;
+  max-width: 360px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.design-report-mark {
+  height: 36px;
+  width: 36px;
+  border: 1px solid #c8cbce;
+  border-top-color: #fff;
+  border-radius: 12px;
+  background: #ffffffb8;
+  box-shadow: inset 0 1px 0 #fff;
+  color: #686b6a;
+  font-size: 19px;
+  font-weight: 650;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.design-report-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.design-report-backdrop button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  border: 1px solid #cfd1d0;
+  border-top-color: #fff;
+  border-radius: 99px;
+  background: #ffffffb8;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 4px 14px #6064630b;
+  padding: 9px 16px;
+  color: #5f6261;
+  font:
+    550 12px/1.5 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Microsoft YaHei",
+    sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.design-report-backdrop button:hover:not(:disabled) {
+  background: #ffffffb8;
+  border-color: #b8bbba;
+}
+.design-report-backdrop button:focus-visible {
+  outline: 3px solid #a8abaa;
+  outline-offset: 3px;
+}
+.design-report-backdrop button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+.design-report-backdrop .design-report-primary {
+  background: #ffffffb8;
+  color: #5e6261;
+  border-color: #c8cac9;
+  font-weight: 650;
+}
+.design-report-backdrop .design-report-close {
+  height: 36px;
+  width: 36px;
+  min-height: 36px;
+  padding: 0;
+  border-radius: 11px;
+  font-size: 25px;
+  font-weight: 350;
+}
+.design-report-dialog iframe {
+  display: block;
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: #f8fafb;
+  min-height: 0;
+}
+.design-report-feedback {
+  padding: 9px 22px;
+  color: #475b70;
+  background: #eef2f7;
+  border-bottom: 1px solid #d6dee6;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.design-report-feedback.error {
+  color: #975f43;
+  background: #fff6ed;
+  border-color: #edddce;
+}
+.design-report-empty {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 18px;
+  max-width: 550px;
+  margin: auto;
+  padding: 40px;
+  text-align: center;
+}
+.design-report-empty h3 {
+  font-size: 20px;
+  margin: 0;
+}
+.design-report-empty p {
+  font-size: 14px;
+  color: #858988;
+  margin: 0;
+  line-height: 1.9;
+}
+.design-report-inline {
+  position: relative;
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
+  z-index: auto;
+}
+.design-report-inline .design-report-dialog {
+  height: 850px;
+  max-height: 90dvh;
+}
+@media (max-width: 900px) {
+  .design-report-toolbar {
+    padding: 13px 17px;
+    gap: 13px;
+  }
+  .design-report-title p {
+    max-width: 230px;
+  }
+  .design-report-actions {
+    gap: 7px;
+  }
+  .design-report-backdrop button {
+    padding-inline: 13px;
+  }
+  .design-report-title h2 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .design-report-backdrop {
+    padding: 8px;
+  }
+  .design-report-dialog {
+    height: calc(100dvh - 16px);
+    border-radius: 18px;
+    max-height: none;
+  }
+  .design-report-toolbar {
+    padding: 13px 14px;
+    flex-wrap: wrap;
+    gap: 13px;
+    position: relative;
+  }
+  .design-report-title {
+    width: calc(100% - 42px);
+    gap: 10px;
+  }
+  .design-report-title h2 {
+    font-size: 16px;
+  }
+  .design-report-title p {
+    font-size: 11px;
+    max-width: 240px;
+  }
+  .design-report-mark {
+    height: 33px;
+    width: 33px;
+    border-radius: 10px;
+    font-size: 18px;
+  }
+  .design-report-actions {
+    width: 100%;
+    gap: 9px;
+    padding-right: 0;
+  }
+  .design-report-actions > button:not(.design-report-close) {
+    flex: 1;
+    min-height: 43px;
+    font-size: 12px;
+    padding-inline: 10px;
+  }
+  .design-report-backdrop .design-report-close {
+    position: absolute;
+    right: 13px;
+    top: 13px;
+    height: 36px;
+    width: 36px;
+  }
+  .design-report-feedback {
+    font-size: 11px;
+    padding: 10px 14px;
+  }
+  .design-report-empty {
+    padding: 25px;
+  }
+  .design-report-empty p {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .design-report-backdrop * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .design-report-backdrop {
+    background: #404a5480;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .design-report-toolbar,
+  .design-report-dialog {
+    background: #fbfcfc;
+    border-color: #b6b8b8;
+  }
+  .design-report-backdrop button {
+    background: #fbfbfb;
+    border-color: #b6b8b8;
+    box-shadow: none;
+  }
+  .design-report-backdrop .design-report-primary {
+    background: #e8e9ea;
+    color: #4e5150;
+  }
+}
+@media (forced-colors: active) {
+  .design-report-backdrop button {
+    background: Canvas;
+    color: CanvasText;
+    border-color: ButtonText;
+    box-shadow: none;
+  }
+  .design-report-backdrop .design-report-primary {
+    border: 2px solid Highlight;
+    color: ButtonText;
+    background: Canvas;
+  }
+}
+
+/* User-authorized official solution overview treatment: solution.css 3–35,
+   solution.js 14–27 and 72. This shell presents the frozen report iframe. */
+.design-report-backdrop {
+  padding: 16px;
+  background: #404a543d;
+}
+.design-report-dialog {
+  width: min(1460px, 100%);
+  height: calc(100dvh - 32px);
+  max-height: none;
+  border-radius: 21px;
+  background: #fbfcfc;
+}
+.design-report-toolbar {
+  min-height: 66px;
+  padding: 12px 28px;
+  gap: 18px;
+  background: #fbfbfbf2;
+  -webkit-backdrop-filter: blur(24px) saturate(115%);
+  backdrop-filter: blur(24px) saturate(115%);
+}
+.design-report-title {
+  gap: 18px;
+}
+.design-report-brand {
+  font-size: 25px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  font-weight: 650;
+  color: #3c3e3d;
+}
+.design-report-title h2 {
+  padding-left: 18px;
+  border-left: 1px solid #dbdddf;
+  color: #868a89;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 450;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.design-report-actions {
+  gap: 9px;
+}
+.design-report-actions > button {
+  min-height: 36px;
+  padding: 7px 15px;
+  font-size: 11px;
+}
+.design-report-backdrop .design-report-close {
+  width: 32px;
+  height: 32px;
+  min-height: 32px;
+  margin-left: 4px;
+  border-radius: 9px;
+}
+.design-report-projectbar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 0;
+  min-height: 69px;
+  padding: 15px max(28px, calc((100% - 1160px) / 2));
+  border-bottom: 1px solid #e2e7ec;
+  background: #ffffffb8;
+  box-shadow: inset 0 1px 0 #fff;
+}
+.design-report-project-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border: 1px solid #d2d4d3;
+  border-top-color: #fff;
+  border-radius: 10px;
+  background: #ffffffb8;
+  box-shadow: inset 0 1px 0 #fff;
+  color: #5d605f;
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.design-report-project-chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #989b9a;
+  box-shadow: 0 0 0 4px #e7ecf0;
+}
+.design-report-projectbar p {
+  color: #888c8b;
+  font-size: 11px;
+  white-space: nowrap;
+  margin: 0;
+}
+.design-report-dialog iframe {
+  background: #fbfcfc;
+}
+@media (max-width: 1000px) {
+  .design-report-toolbar {
+    padding-inline: 21px;
+  }
+  .design-report-projectbar {
+    padding-inline: 32px;
+  }
+}
+@media (max-width: 700px) {
+  .design-report-backdrop {
+    padding: 9px;
+  }
+  .design-report-dialog {
+    height: calc(100dvh - 18px);
+    border-radius: 17px;
+  }
+  .design-report-toolbar {
+    min-height: 61px;
+    padding: 13px 16px;
+    gap: 13px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .design-report-title {
+    gap: 12px;
+    width: calc(100% - 40px);
+    min-height: 29px;
+  }
+  .design-report-brand {
+    font-size: 23px;
+  }
+  .design-report-title h2 {
+    padding-left: 12px;
+    font-size: 11px;
+  }
+  .design-report-actions {
+    width: 100%;
+    gap: 9px;
+  }
+  .design-report-actions > button:not(.design-report-close) {
+    flex: 1;
+    min-height: 38px;
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+  .design-report-backdrop .design-report-close {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    width: 31px;
+    height: 31px;
+    min-height: 31px;
+    margin: 0;
+  }
+  .design-report-projectbar {
+    min-height: 60px;
+    padding: 12px 21px;
+  }
+  .design-report-project-chip {
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+  .design-report-projectbar p {
+    display: none;
+  }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .design-report-toolbar,
+  .design-report-projectbar {
+    background: #fbfcfc;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border-color: #b6b8b8;
+  }
+  .design-report-project-chip {
+    background: #f3f3f3;
+    border-color: #b2b5b5;
+  }
+}
+@media (forced-colors: active) {
+  .design-report-project-chip {
+    background: Canvas;
+    color: CanvasText;
+    border-color: ButtonText;
+  }
+}
+
+/* Official solution shell: original blue glass palette and controls. */
+.design-report-backdrop {
+  background: #404a543d;
+  color: #3b444d;
+}
+.design-report-dialog {
+  background: #ffffffb8;
+  border-color: #eef1f4;
+  box-shadow:
+    inset 0 1px 0 #ffffffed,
+    0 28px 85px #3d464f2b;
+}
+.design-report-toolbar,
+.design-report-projectbar {
+  background: #fafbfce6;
+  border-color: #dce2e8;
+  box-shadow: inset 0 1px 0 #ffffffdb;
+  backdrop-filter: blur(24px) saturate(115%);
+}
+.design-report-brand {
+  color: #30373e;
+}
+.design-report-title h2 {
+  color: #6b7c8c;
+  border-color: #d1d9e1;
+}
+.design-report-actions button,
+.design-report-primary {
+  background: #ffffffb8;
+  border-color: #d1dae2;
+  color: #5d6b79;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 2px 6px #68778608;
+}
+.design-report-actions button:hover:not(:disabled) {
+  border-color: #b6bec7;
+  background: #ffffffb8;
+}
+.design-report-projectbar {
+  justify-content: stretch;
+  padding: 13px 32px;
+  min-height: 68px;
+}
+.design-report-project-chip {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 16px;
+  border: 1px solid #bcc4cc;
+  background: #ffffffb8;
+  color: #505c68;
+  box-shadow:
+    inset 1px 1px 0 #fff,
+    inset -1px -1px 0 #bdc5cd40,
+    0 4px 13px #6b7a8a18;
+  border-radius: 10px;
+}
+.design-report-project-chip:before {
+  display: none;
+}
+.design-report-projectbar p {
+  display: none;
+}
+.design-report-actions :focus-visible {
+  outline: 2px solid #7f8e9c;
+  outline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .design-report-projectbar {
+    padding: 12px 18px;
+    min-height: 60px;
+  }
+  .design-report-project-chip {
+    font-size: 11px;
+  }
+}

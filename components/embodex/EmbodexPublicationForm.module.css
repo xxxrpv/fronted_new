@@ -1,0 +1,89 @@
+.formContainer {
+  margin-top: 16px;
+  padding: 16px;
+  background-color: var(--surface-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #0f172a);
+  margin-bottom: 12px;
+}
+
+.fieldGroup {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary, #334155);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 8px 10px;
+  font-size: 13px;
+  border: 1px solid var(--input-border, #cbd5e1);
+  border-radius: 6px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.textarea:focus,
+.textInput:focus {
+  outline: 2px solid var(--primary-color, #2563eb);
+  outline-offset: -1px;
+}
+
+.textInput {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 13px;
+  border: 1px solid var(--input-border, #cbd5e1);
+  border-radius: 6px;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.helperText {
+  font-size: 12px;
+  color: var(--text-muted, #64748b);
+}
+
+.errorAlert {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--danger-color, #b91c1c);
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}

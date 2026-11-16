@@ -1,0 +1,294 @@
+/* Local homepage integration. Without ?embed=1, the original case is unchanged. */
+html.embodex-embedded {
+  scroll-behavior: auto;
+  scroll-padding-top: 0;
+}
+
+html.embodex-embedded body {
+  margin: 0;
+  background: #f4f7fa;
+  overflow-x: hidden;
+}
+
+html.embodex-embedded body > .app-header,
+html.embodex-embedded .page > :not(#interactive),
+html.embodex-embedded #interactive > .workspace-heading > .section-number,
+html.embodex-embedded #interactive > .workspace-heading > .section-head-copy {
+  display: none;
+}
+
+html.embodex-embedded .page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 10px 12px 12px;
+  display: flow-root;
+}
+
+html.embodex-embedded #interactive {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  scroll-margin: 0;
+}
+
+html.embodex-embedded #interactive > .workspace-heading {
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px;
+  padding: 0;
+  min-height: 37px;
+  gap: 8px;
+}
+
+html.embodex-embedded #interactive .model-source-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+}
+
+html.embodex-embedded #interactive .model-source-chip {
+  margin: 0;
+}
+
+html.embodex-embedded .workspace-grid {
+  grid-template-columns: minmax(0, 1fr) 310px;
+  gap: 12px;
+  align-items: stretch;
+}
+
+html.embodex-embedded #interactive .stage,
+html.embodex-embedded #interactive .inspector {
+  height: 700px;
+  max-height: 700px;
+  min-height: 0;
+}
+
+html.embodex-embedded .embed-source-note {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  padding: 11px 3px 13px;
+  color: #718596;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+html.embodex-embedded .embed-source-note p {
+  margin: 0;
+}
+
+html.embodex-embedded .embed-source-note nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+}
+
+html.embodex-embedded .embed-source-note a {
+  color: #52758e;
+  text-underline-offset: 3px;
+}
+
+html.embodex-embedded .embed-source-note a:focus-visible {
+  outline: 2px solid #3974bc;
+  outline-offset: 3px;
+}
+
+html.embodex-embedded #main-stage:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  max-height: none;
+}
+
+@media (max-width: 1000px) and (min-width: 761px) {
+  html.embodex-embedded .workspace-grid {
+    grid-template-columns: minmax(0, 1fr) 280px;
+  }
+}
+
+@media (max-width: 760px) {
+  html.embodex-embedded .page {
+    padding: 8px 8px 12px;
+  }
+
+  html.embodex-embedded .workspace-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  html.embodex-embedded #interactive .stage {
+    height: 500px;
+    max-height: none;
+  }
+
+  /* Keep the requirement form's existing taller panel above the shared
+     mobile model-stage height so its input remains inside the frame. */
+  html.embodex-embedded #interactive .stage[data-workspace-mode="requirements"],
+  html.embodex-embedded #interactive .stage[data-industrial-mode-view="requirements"] {
+    height: 650px;
+    max-height: none;
+  }
+
+  html.embodex-embedded[lang="en"] #interactive .stage[data-workspace-mode="requirements"],
+  html.embodex-embedded[lang="en"] #interactive .stage[data-industrial-mode-view="requirements"] {
+    height: 740px;
+  }
+
+  html.embodex-embedded #interactive .inspector {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  html.embodex-embedded .inspector-body {
+    flex: none;
+    max-height: none;
+    overflow: visible;
+  }
+
+  html.embodex-embedded .embed-source-note {
+    display: none;
+    padding: 12px 5px 15px;
+  }
+
+  html.embodex-embedded .embed-source-note nav {
+    margin-top: 7px;
+  }
+}
+
+@media (max-width: 320px) {
+  html.embodex-embedded #interactive .stage[data-workspace-mode="requirements"],
+  html.embodex-embedded #interactive .stage[data-industrial-mode-view="requirements"] {
+    height: 680px;
+  }
+}
+
+.embodex-embedded .model-source-chip,.embodex-embedded #source-info{display:none!important}
+
+/* A compact inspector gives the embedded model more room; phones stay stacked. */
+@media (min-width: 761px) {
+  html.embodex-embedded .workspace-grid {
+    grid-template-columns: minmax(0, 1fr) 200px;
+    gap: 8px;
+  }
+
+  html.embodex-embedded .inspector-heading,
+  html.embodex-embedded .tool-panel {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  html.embodex-embedded .inspector-heading {
+    gap: 8px;
+  }
+
+  html.embodex-embedded .inspector-heading > div,
+  html.embodex-embedded .catalog-row > span,
+  html.embodex-embedded .sensor-switch > span,
+  html.embodex-embedded .tool-panel input,
+  html.embodex-embedded .tool-panel select,
+  html.embodex-embedded .tool-panel button {
+    min-width: 0;
+  }
+
+  html.embodex-embedded .inspector-heading h3,
+  html.embodex-embedded .tool-description,
+  html.embodex-embedded .part-description,
+  html.embodex-embedded .catalog-row b,
+  html.embodex-embedded .catalog-row small,
+  html.embodex-embedded .part-specs,
+  html.embodex-embedded .precision-info,
+  html.embodex-embedded .editor-scope,
+  html.embodex-embedded .cad-note,
+  html.embodex-embedded .info-box p,
+  html.embodex-embedded .sensor-switch small {
+    overflow-wrap: anywhere;
+  }
+
+  html.embodex-embedded .catalog-filters {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  html.embodex-embedded .catalog-filters input,
+  html.embodex-embedded .catalog-filters select {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  html.embodex-embedded .button-pair,
+  html.embodex-embedded .pose-grid,
+  html.embodex-embedded .scenario-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  html.embodex-embedded .button-pair .glass-button,
+  html.embodex-embedded .pose-grid .glass-button,
+  html.embodex-embedded .scenario-buttons .glass-button {
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 11px;
+  }
+
+  html.embodex-embedded .sensor-switch {
+    gap: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  html.embodex-embedded .sensor-switch > .ui-icon {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+  }
+
+  html.embodex-embedded .cad-input-row {
+    gap: 8px;
+  }
+
+  html.embodex-embedded .cad-input-row input[type="number"]:not([readonly]) {
+    width: 76px;
+    flex: 0 0 76px;
+  }
+
+  html.embodex-embedded .field-row {
+    gap: 8px;
+  }
+
+  html.embodex-embedded .field-row select {
+    max-width: 65%;
+  }
+
+  html.embodex-embedded .tool-panel .glass-button.full-width {
+    padding-left: 6px;
+    padding-right: 6px;
+    white-space: normal;
+  }
+
+  html.embodex-embedded .payload-result {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  html.embodex-embedded .payload-result b {
+    font-size: 24px;
+  }
+
+  html.embodex-embedded .part-heading h2,
+  html.embodex-embedded .part-subtitle,
+  html.embodex-embedded .event-item > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+

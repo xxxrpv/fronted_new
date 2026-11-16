@@ -1,0 +1,480 @@
+/* Final shared presentation layer. The original workbench is the visual baseline.
+   Project modules still own content, controls and behaviour. */
+#interactive {
+  --wb-panel-background:#ffffffca;
+  --wb-panel-border:#e0e8f0;
+  --wb-divider:#e9eff5;
+  --wb-heading:#7390a8;
+  --wb-body:#6d889e;
+  --wb-muted:#8da8bc;
+  --wb-panel-inset:10px;
+  --wb-control-space:19px;
+  --wb-catalog-height:245px;
+}
+
+/* Both shells use .inspector/.inspector-body. The older shell has an inner
+   .tool-panel; the industrial body itself is the content container. */
+#interactive .inspector {
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border:1px solid var(--wb-panel-border);
+  border-radius:12px;
+  background:var(--wb-panel-background);
+  color:var(--body,#60798e);
+}
+#interactive .inspector > .inspector-heading {
+  flex:none;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:21px var(--wb-panel-inset);
+  border-bottom:1px solid var(--wb-divider);
+}
+#interactive .inspector-heading > div { min-width:0; }
+#interactive .inspector-heading > div > :is(span,small) {
+  display:block;
+  font-size:9px;
+  line-height:1.4;
+  font-weight:400;
+  letter-spacing:1px;
+  color:#a8bdcc;
+}
+#interactive .inspector-heading h3 {
+  margin:7px 0 0;
+  font-size:16px;
+  line-height:1.4;
+  font-weight:550;
+  letter-spacing:normal;
+  color:var(--wb-heading);
+  overflow-wrap:anywhere;
+}
+#interactive .inspector-body {
+  flex:1;
+  min-height:0;
+  overflow:auto;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  scrollbar-color:#d8e3ed transparent;
+}
+#interactive :is(.tool-panel,.industrial-inspector-body) { padding:20px var(--wb-panel-inset); }
+#interactive .inspector .tool-description {
+  margin:0 0 20px;
+  font-size:13px;
+  line-height:1.85;
+  color:var(--wb-body);
+}
+#interactive .inspector .mini-heading {
+  margin:22px 0 12px;
+  font-size:12px;
+  line-height:normal;
+  font-weight:500;
+  color:var(--wb-muted);
+}
+#interactive .inspector .glass-button {
+  min-width:0;
+  min-height:36px;
+  padding:8px 6px;
+  border-radius:7px;
+  font-size:11px;
+  line-height:normal;
+  white-space:normal;
+}
+#interactive .inspector .glass-button:where(:not(.primary):not(.danger)) { border-color:#dce9f5; }
+#interactive .inspector .glass-button.primary { padding:9px 12px;font-size:12px; }
+#interactive .inspector .button-pair {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px;
+  margin:14px 0 0;
+}
+#interactive .inspector .button-pair > .glass-button {
+  padding:8px 6px;
+  font-size:11px;
+}
+#interactive .inspector .full-width { width:100%; }
+#interactive .inspector :is(.experiment-actions,.industrial-experiment-actions) {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 32px;
+  gap:6px;
+  margin:22px 0 0;
+}
+#interactive .inspector .industrial-experiment-actions .full-width {
+  grid-column:1/-1;
+  margin:0;
+}
+#interactive .inspector :is(.experiment-actions,.industrial-experiment-actions) .glass-button {
+  min-height:36px;
+  height:36px;
+  padding:8px 6px;
+  font-size:11px;
+}
+#interactive .inspector .experiment-actions :is(.experiment-reset,[data-cell-reset]) { padding:0;font-size:17px;font-family:system-ui,sans-serif; }
+
+/* Match two DOM forms: div > label + range, and label > output + range. */
+#interactive .inspector .experiment-control { margin:var(--wb-control-space) 0; }
+#interactive .inspector .experiment-control > label,
+#interactive .inspector label.industrial-slider {
+  color:#6b8ca5;
+  font-size:10px;
+  font-weight:400;
+  line-height:1.4;
+}
+#interactive .inspector .experiment-control > label {
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:4px;
+  margin-bottom:8px;
+}
+#interactive .inspector label.industrial-slider {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:baseline;
+  column-gap:4px;
+}
+#interactive .inspector .experiment-control output {
+  float:none;
+  max-width:none;
+  color:#4c7999;
+  font-size:10px;
+  font-weight:600;
+  line-height:1.4;
+  font-variant-numeric:tabular-nums;
+  text-align:right;
+  white-space:nowrap;
+}
+#interactive .inspector .experiment-control input[type=range] {
+  display:block;
+  grid-column:1/-1;
+  width:100%;
+  min-width:0;
+  height:4px;
+  margin:8px 0 0;
+  accent-color:#80a9bf;
+  cursor:pointer;
+}
+#interactive .inspector :is(.experiment-preset,.industrial-algorithms .glass-button) {
+  min-height:36px;
+  padding:8px 6px;
+  border-radius:7px;
+  font-size:11px;
+  line-height:normal;
+  justify-content:center;
+}
+#interactive .inspector :is(.experiment-preset,.industrial-algorithms .glass-button).selected {
+  color:#377399;
+  background:linear-gradient(140deg,rgba(219,238,249,.92),rgba(236,247,253,.9));
+  border-color:rgba(113,163,195,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 3px 8px rgba(68,105,135,.04);
+}
+
+/* One catalog treatment, including the actual precision child catalog. */
+#interactive .inspector .catalog-filters {
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:6px;
+  margin:0 0 11px;
+}
+#interactive .inspector .catalog-filters :is(input,select) {
+  width:100%;
+  min-width:0;
+  max-width:100%;
+  margin:0;
+  padding:9px 10px;
+  border:1px solid #dce7ef;
+  border-radius:6px;
+  color:#6f8da4;
+  background:#f7fbfd;
+  font-size:12px;
+  line-height:normal;
+}
+#interactive .inspector .catalog-filters input::placeholder { color:#a7bac9; }
+#interactive .inspector :is(.precision-catalog,.industrial-internal-list) {
+  display:block;
+  max-height:var(--wb-catalog-height)!important;
+  overflow:auto;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  scrollbar-color:#d8e3ed transparent;
+  margin:0 0 19px;
+  padding-bottom:0;
+  border-bottom:1px solid #e1eaf1;
+}
+#interactive .inspector :is(.catalog-group h4,.industrial-catalog-group > summary) {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:4px;
+  margin:0;
+  padding:11px 0;
+  color:#91a9bc;
+  font-size:10px;
+  font-weight:500;
+  line-height:normal;
+  letter-spacing:.6px;
+}
+#interactive .inspector :is(.catalog-group h4,.industrial-catalog-group > summary) > span { font-size:10px; }
+#interactive .inspector .industrial-catalog-group { padding-bottom:9px; }
+#interactive .inspector .catalog-row {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:5px;
+  width:100%;
+  min-height:40px;
+  margin:0 0 4px;
+  padding:9px 10px;
+  border:1px solid #e5edf4;
+  border-radius:6px;
+  background:#f6f9fc;
+  color:#95aebf;
+  text-align:left;
+  font-size:12px;
+  line-height:1.5;
+}
+#interactive .inspector .catalog-row b {
+  display:block;
+  font-size:12px;
+  font-weight:500;
+  line-height:1.5;
+  color:#6889a3;
+}
+#interactive .inspector .catalog-row > :is(i,span:last-child):not(:has(b)) {
+  font-style:normal;
+  font-size:12px;
+  color:#8daac0;
+}
+#interactive .inspector .catalog-row:hover { background:#edf5fc;border-color:#bfd8ec; }
+#interactive .inspector .catalog-row.selected { background:#eaf3fb;border-color:#d1e2f0; }
+#interactive .inspector .catalog-row.selected b { color:#3f7095; }
+#interactive .inspector .industrial-sensor-choice {
+  padding:13px 11px;
+  border:1px solid #e4edf5;
+  background:#f5f9fc;
+  border-radius:7px;
+  gap:11px;
+  font-size:13px;
+  font-weight:500;
+  color:#9ab4c8;
+}
+#interactive .inspector .industrial-sensor-choice.selected { background:#eaf3fb;border-color:#d1e2f0;color:#7096b3; }
+#interactive .inspector .industrial-sensor-choice > .ui-icon:first-child { width:22px;height:22px; }
+#interactive .inspector .scenario-buttons { grid-template-columns:repeat(2,minmax(0,1fr));gap:6px; }
+#interactive .inspector .scenario-buttons .glass-button { padding:8px 6px;font-size:11px;min-height:36px; }
+#interactive .inspector .scenario-buttons .ui-icon { width:13px;height:13px; }
+#interactive .inspector :is(.industrial-policy,#experiment-surface) {
+  width:100%;
+  min-width:0;
+  height:34px;
+  padding:0 7px;
+  border:1px solid rgba(144,177,199,.25);
+  border-radius:7px;
+  background:rgba(246,251,255,.88);
+  color:#5c809b;
+  font-size:10px;
+  line-height:1.4;
+}
+
+/* Both requirement workspaces already use these semantic classes. Only their
+   form IDs differ. Keep the conversation, input and frame definitions shared. */
+#interactive .requirement-canvas { inset:82px 24px 16px; }
+#interactive .requirement-heading { padding:8px 0 18px; }
+#interactive .project-conversation { flex:1;min-height:90px;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:3px 5px 4px 0; }
+#interactive .conversation-message { max-width:92%;padding:15px 17px;border:1px solid #e1e8f1;border-radius:17px;background:#ffffffab;margin-bottom:13px; }
+#interactive .conversation-message.user { margin-left:auto;border-color:#cfdef1;background:#e4eefc8c;border-bottom-right-radius:5px; }
+#interactive .conversation-message.assistant { border-bottom-left-radius:5px; }
+#interactive .conversation-author { display:block;font-size:9px;letter-spacing:.4px;color:#7491ae;margin-bottom:7px; }
+#interactive .conversation-message p { margin:0;font-size:12px;line-height:1.95;color:#506f8c;white-space:pre-wrap;overflow-wrap:anywhere; }
+#interactive .requirement-compose { padding-top:11px; }
+#interactive :is(#requirement-chat,.industrial-chat) { background:#ffffffcf;border:1px solid #cfdfef;border-radius:16px;padding:13px 14px 10px;box-shadow:0 8px 24px #3d638b08; }
+#interactive :is(#requirement-input,#industrial-request) { display:block;width:100%;min-height:45px!important;height:auto;max-height:90px;margin:0;padding:0;border:0;border-radius:0;background:transparent;resize:none;outline:0;color:#355773;font:12px/1.7 Inter,'Segoe UI','Microsoft YaHei',sans-serif;box-shadow:none; }
+#interactive :is(#requirement-input,#industrial-request)::placeholder { color:#99acbd; }
+#interactive :is(#requirement-feedback,.industrial-feedback) { min-height:14px;margin:6px 4px 0;font-size:10px;color:#6584a3; }
+#interactive .requirement-metrics { margin-top:5px; }
+
+/* Shared sensor palette and comparison geometry; new industrial nodes follow
+   the original sensor bar without introducing a second size system. */
+#interactive :is(#sensor-mode-bar,.industrial-sensor-bar) { left:14px;right:auto;bottom:57px;width:max-content;max-width:calc(100% - 28px);display:flex;align-items:center;gap:3px;padding:4px;border:1px solid #d9e5ef;border-radius:9px;background:#f9fcffe8;box-shadow:0 5px 24px #456a8610;backdrop-filter:blur(18px);overflow-x:auto;scrollbar-width:none; }
+#interactive :is(#sensor-mode-bar,.industrial-sensor-bar) .sensor-mode-options { display:flex;flex:initial;gap:2px; }
+#interactive :is(#sensor-mode-bar,.industrial-sensor-bar) .glass-button { flex:none;min-height:25px;height:25px;padding:3px 9px;border-radius:6px;font-size:9px;line-height:normal;white-space:nowrap;box-shadow:none; }
+#interactive :is(#sensor-mode-bar,.industrial-sensor-bar) .glass-button.selected { background:#dae9f4c9;color:#416f94;border-color:#adc8dd; }
+#interactive :is(#sensor-compare,[data-industrial-action=compare]) { margin-left:2px;border-left:1px solid #d4e1ec; }
+#interactive :is(.sensor-legend,.industrial-sensor-legend) { position:absolute;z-index:6;left:15px;right:auto;top:137px;max-width:185px;padding:7px 9px;pointer-events:none;background:#f9fcffc9;border:1px solid #d9e5ef;border-radius:7px;backdrop-filter:blur(12px); }
+#interactive :is(.sensor-legend,.industrial-sensor-legend) b { font-size:9px;font-weight:450;color:#557b99; }
+#interactive :is(.sensor-legend,.industrial-sensor-legend) p { display:none; }
+#interactive :is(.sensor-legend,.industrial-sensor-legend) .sensor-color-scale { height:3px;border-radius:4px;margin-bottom:5px;display:none; }
+#interactive :is(.sensor-legend,.industrial-sensor-legend)[data-sensor=thermal] .sensor-color-scale { display:block;background:linear-gradient(90deg,#120b36,#49329e,#ad2585,#ee783c,#ffe45b,#fff8e5); }
+#interactive :is(.sensor-legend,.industrial-sensor-legend):is([data-sensor=depth],[data-sensor=pointcloud]) .sensor-color-scale { display:block;background:linear-gradient(90deg,#ff543d,#ffbd62,#75d5c6,#3d7dcd,#142c5a); }
+#interactive :is(.sensor-comparison-labels,.industrial-comparison-labels) { position:absolute;inset:0;z-index:5;pointer-events:none;display:flex;justify-content:space-around;align-items:flex-start;padding-top:222px; }
+#interactive :is(.sensor-comparison-labels,.industrial-comparison-labels)>span { font-size:9px;letter-spacing:.5px;color:#456f91;background:#edf6ffe0;padding:6px 10px;border:1px solid #c9dfef;border-radius:5px;backdrop-filter:blur(12px); }
+#interactive .sensor-comparison-labels:after,
+#interactive .industrial-comparison-divider { position:absolute;left:50%;top:119px;bottom:95px;width:1px;background:#e7f4ff91;box-shadow:0 0 0 1px #54748e20;z-index:5;pointer-events:none; }
+#interactive .industrial-comparison-labels:after { content:none; }
+
+/* Model tools occupy the same anchors in all five project stages. */
+#interactive .mode-dock {
+  top:17px;
+  left:18px;
+  right:auto;
+  width:max-content;
+  max-width:calc(100% - 36px);
+  padding:5px;
+  gap:1px!important;
+  border-radius:10px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  justify-content:flex-start!important;
+}
+#interactive .mode-dock .mode-button { padding:10px 9px!important;font-size:11px!important;gap:4px!important;min-width:auto!important; }
+#interactive .mode-dock .ui-icon { width:13px;height:13px; }
+#interactive .camera-tools { top:95px;right:18px;gap:7px;z-index:8; }
+#interactive .camera-tools > .glass-icon { width:32px;height:34px;min-height:34px;padding:7px;border-radius:7px; }
+#interactive .camera-tools .ui-icon { width:16px;height:16px; }
+#interactive :is(.stage-caption,.industrial-eyebrow) { top:95px;left:27px; }
+#interactive .industrial-eyebrow { font-size:8px;line-height:normal;letter-spacing:2px;color:#7b94a9; }
+#interactive :is(#main-stage,.industrial-stage) .scene-readouts {
+  display:flex;
+  align-items:baseline;
+  gap:18px;
+  bottom:63px;
+  right:16px;
+  max-width:calc(100% - 32px);
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#607f99;
+  font:400 14px/normal Inter,'Segoe UI','Microsoft YaHei',sans-serif;
+  text-align:right;
+}
+#interactive .scene-readouts > span { display:flex;align-items:baseline;gap:4px;white-space:nowrap; }
+#interactive :is(#main-stage,.industrial-stage) .scene-readouts small { font-size:8px;color:#7892a7; }
+#interactive :is(#main-stage,.industrial-stage) .scene-readouts b { font:400 15px Display,sans-serif;color:#607f99; }
+#interactive :is(#main-stage,.industrial-stage) .scene-readouts em { font-style:normal;font-size:7px;color:#8098ac; }
+
+@media(max-width:1000px) and (min-width:761px) {
+  #interactive :is(.tool-panel,.industrial-inspector-body) { padding-block:19px; }
+  #interactive .camera-tools { top:144px;right:13px; }
+  #interactive .camera-tools > .glass-icon { width:29px; }
+  #interactive :is(#main-stage,.industrial-stage) .scene-readouts { gap:9px; }
+  #interactive :is(#main-stage,.industrial-stage) .scene-readouts small { font-size:7px; }
+  #interactive :is(#main-stage,.industrial-stage) .scene-readouts b { font-size:12px; }
+  #interactive :is(#main-stage,.industrial-stage) .scene-readouts em { font-size:6px; }
+}
+@media(max-width:900px) {
+  #interactive .requirement-canvas { inset:79px 18px 12px; }
+  #interactive .conversation-message { max-width:96%; }
+  #interactive .mode-dock .mode-button { padding:10px 7px!important; }
+}
+@media(max-width:760px) {
+  #interactive { --wb-panel-inset:20px;--wb-control-space:17px;--wb-catalog-height:270px; }
+  #interactive .inspector { height:auto;max-height:none;overflow:visible; }
+  #interactive .inspector > .inspector-heading { padding:20px; }
+  #interactive .inspector-heading h3 { font-size:17px; }
+  #interactive .inspector-body { flex:none;max-height:none;overflow:visible; }
+  #interactive :is(.tool-panel,.industrial-inspector-body) { padding:19px 20px 22px; }
+  #interactive .inspector .glass-button { min-height:38px;font-size:12px; }
+  #interactive .inspector .scenario-buttons .glass-button { font-size:11px;padding:9px 6px; }
+  #interactive .inspector .catalog-filters { display:flex;gap:7px; }
+  #interactive .inspector .catalog-filters input { width:60%; }
+  #interactive .inspector .catalog-filters select { width:40%;font-size:11px; }
+  #interactive .inspector .catalog-row { padding:11px 12px; }
+  #interactive .inspector .catalog-row b { font-size:13px; }
+  #interactive .inspector :is(.catalog-group h4,.industrial-catalog-group > summary) { font-size:11px; }
+  #interactive .inspector .experiment-control > label,#interactive .inspector label.industrial-slider,#interactive .inspector .experiment-control output { font-size:11px; }
+  #interactive .requirement-canvas { inset:97px 15px 12px; }
+  #interactive .requirement-heading { padding:5px 0 13px; }
+  #interactive .project-conversation { min-height:190px; }
+  #interactive .conversation-message { padding:12px 14px; }
+  #interactive .conversation-message p { font-size:11px; }
+  #interactive :is(#sensor-mode-bar,.industrial-sensor-bar) { bottom:89px;left:12px;max-width:calc(100% - 24px); }
+  #interactive :is(#sensor-mode-bar,.industrial-sensor-bar) .glass-button { height:24px;min-height:24px;font-size:8px;padding-inline:7px; }
+  #interactive :is(.sensor-legend,.industrial-sensor-legend) { top:157px;max-width:165px; }
+  #interactive :is(.sensor-comparison-labels,.industrial-comparison-labels) { padding-top:215px; }
+  #interactive .sensor-comparison-labels:after,#interactive .industrial-comparison-divider { bottom:125px; }
+  #interactive .mode-dock { top:9px!important;left:8px!important;right:8px!important;max-width:calc(100% - 16px);width:auto!important;padding:4px!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px!important;overflow:visible;border-radius:8px; }
+  #interactive .mode-dock .mode-button { padding:8px 4px!important;font-size:10px!important;justify-content:center; }
+  #interactive .mode-dock .ui-icon { display:none; }
+  #interactive .camera-tools { top:155px!important;right:12px;gap:6px; }
+  #interactive .camera-tools > .glass-icon { width:27px;height:34px;min-height:34px;padding:6px; }
+  #interactive .camera-tools .ui-icon { width:13px;height:13px; }
+  #interactive :is(.stage-caption,.industrial-eyebrow) { top:111px!important;left:20px; }
+  #interactive :is(#main-stage,.industrial-stage) .scene-readouts { bottom:61px;right:16px;max-width:calc(100% - 32px);gap:12px; }
+  #interactive :is(#main-stage,.industrial-stage) .scene-readouts small { font-size:6px; }
+  #interactive :is(#main-stage,.industrial-stage) .scene-readouts b { font-size:12px; }
+  #interactive :is(#main-stage,.industrial-stage) .scene-readouts em { font-size:6px; }
+}
+
+/* Task status and sensing share one compact footer rail in all five projects.
+   On a phone the two overlays stack above the two-row task controls. */
+#interactive :is(#main-stage,.industrial-stage) {
+  --wb-task-action-bottom:14px;
+  --wb-task-action-height:34px;
+  --wb-task-status-gap:8px;
+  --wb-task-status-height:34px;
+  --wb-task-status-bottom:calc(var(--wb-task-action-bottom) + var(--wb-task-action-height) + var(--wb-task-status-gap));
+}
+#interactive :is(#mission-hud,.industrial-status) {
+  position:absolute;
+  top:auto;
+  right:auto;
+  bottom:var(--wb-task-status-bottom);
+  left:14px;
+  box-sizing:border-box;
+  width:clamp(184px,35%,280px);
+  max-width:calc(100% - 28px);
+  height:var(--wb-task-status-height);
+  padding:4px 9px;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:center;
+  gap:2px;
+  overflow:hidden;
+  border:1px solid #d2e2ef;
+  border-radius:8px;
+  background:#edf6ffed;
+  box-shadow:0 4px 18px #456a8609;
+  color:#557d9a;
+  font-size:9px;
+  line-height:1.25;
+  z-index:7;
+  pointer-events:none;
+}
+#interactive :is(#mission-hud,.industrial-status)[hidden] { display:none!important; }
+#interactive :is(#mission-hud,.industrial-status) .live-state {
+  display:flex;align-items:center;gap:5px;min-width:0;overflow:hidden;color:#557d9a;font-size:9px;line-height:12px;
+}
+#interactive :is(#mission-hud,.industrial-status) .live-state .status-dot { flex:0 0 5px;width:5px;height:5px; }
+#interactive :is(#mission-hud,.industrial-status) .live-state b { display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500;color:#486f8d; }
+#interactive :is(#mission-hud,.industrial-status) .mission-metrics { display:flex;align-items:center;justify-content:flex-start;gap:8px;min-width:0;overflow:hidden;white-space:nowrap;color:#7895ad;font-size:7px;line-height:9px; }
+#interactive :is(#mission-hud,.industrial-status) .mission-metrics > span { display:inline-flex;align-items:baseline;gap:3px;flex:none; }
+#interactive :is(#mission-hud,.industrial-status) .mission-metrics b { font-size:7px;line-height:9px;font-weight:500;color:#62839e; }
+#interactive :is(#main-stage[data-workspace-mode="mission"],.industrial-stage[data-industrial-mode-view="application"]) :is(#sensor-mode-bar,.industrial-sensor-bar) { top:auto;left:auto;right:14px;bottom:var(--wb-task-status-bottom);box-sizing:border-box;height:34px;padding:3px 4px;max-width:calc(100% - 28px); }
+#interactive :is(#sensor-mode-bar,.industrial-sensor-bar) .sensor-mode-options { align-items:center; }
+#interactive :is(#main-stage[data-workspace-mode="mission"],.industrial-stage[data-industrial-mode-view="application"]) .sensor-comparison-labels:after,
+#interactive .industrial-stage[data-industrial-mode-view="application"] .industrial-comparison-divider { bottom:calc(var(--wb-task-status-bottom) + var(--wb-task-status-height) + 8px); }
+@media(max-width:760px) {
+  #interactive :is(#main-stage,.industrial-stage) { --wb-task-action-bottom:12px;--wb-task-action-height:69px;--wb-task-status-gap:9px;--wb-task-status-height:32px; }
+  #interactive :is(#mission-hud,.industrial-status) { left:12px;width:min(245px,calc(100% - 24px));max-width:calc(100% - 24px);padding:3px 8px;border-radius:7px; }
+  #interactive :is(#main-stage[data-workspace-mode="mission"],.industrial-stage[data-industrial-mode-view="application"]) :is(#sensor-mode-bar,.industrial-sensor-bar) { left:auto;right:12px;bottom:calc(var(--wb-task-status-bottom) + var(--wb-task-status-height) + 8px);height:32px;padding:3px 4px;max-width:calc(100% - 24px); }
+  #interactive :is(#main-stage[data-workspace-mode="mission"],.industrial-stage[data-industrial-mode-view="application"]) .sensor-comparison-labels:after,
+  #interactive .industrial-stage[data-industrial-mode-view="application"] .industrial-comparison-divider { bottom:calc(var(--wb-task-status-bottom) + var(--wb-task-status-height) + 48px); }
+}
+
+/* English uses the same controls, with room for longer labels. */
+html[lang=en] #interactive .mode-dock{max-width:calc(100% - 28px);overflow-x:auto;scrollbar-width:thin;justify-content:flex-start;}
+html[lang=en] #interactive .mode-dock .mode-button{flex:none;font-size:10px;white-space:nowrap;}
+html[lang=en] #interactive .project-switch button{white-space:nowrap;}
+html[lang=en] #interactive .inspector-heading h3{font-size:16px;line-height:1.5;}
+html[lang=en] #interactive .scenario-buttons .glass-button{font-size:10px;line-height:1.4;min-height:38px;}
+html[lang=en] #interactive .project-requirement-title{font-size:clamp(23px,2.2vw,33px);line-height:1.3;}
+html[lang=en] #interactive .sensor-mode-bar .glass-button{font-size:8px;padding-inline:6px;}
+html[lang=en] #interactive .mission-controls .glass-button{font-size:8px;padding-inline:7px;}
+html[lang=en] #interactive .project-conversation{line-height:1.65;}
+@media(max-width:760px){html[lang=en] #interactive .mode-dock{max-width:calc(100% - 24px)}html[lang=en] #interactive .mode-dock .mode-button{font-size:9px;padding-inline:8px}html[lang=en] #interactive .project-title{font-size:24px}}
+
+@media(max-width:760px){html[lang=en] #interactive .mode-dock .mode-button{white-space:normal!important;font-size:9px!important;min-width:0!important;min-height:32px;line-height:1.25;padding:6px 3px!important}}

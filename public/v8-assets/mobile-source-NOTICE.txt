@@ -1,0 +1,5 @@
+Detailed AMR concept geometry from the user-provided EmbodiX official-site source, industrial-mobile.js.
+The supplied file declares original concept geometry; it does not declare a separate SPDX redistribution license.
+Reused under the user's explicit instruction for this implementation, with source attribution retained.
+This output is not CC0, not Unitree geometry, not OEM CAD, and not validated hardware.
+No source-author endorsement, manufacturing accuracy or global redistribution permission is inferred.

@@ -1,0 +1,29 @@
+[
+  {
+    "asset": "go2-high-fidelity",
+    "sourceSha256": "210753eef58c3fba7f392c8604a276f22b897887831e0fe6d30ffd989aceec53",
+    "posterSha256": "bbec48f3676abc4c1757b28c515688c0539c4723b8ef437869d8d9467f8bc3be",
+    "width": 1000,
+    "height": 760,
+    "transparent": true,
+    "bytes": 247332
+  },
+  {
+    "asset": "inspection-reference",
+    "sourceSha256": "d6f6104ae8b2c90b00c9db5bbac0e4d5c6270323022adf8fe4646e2b3c971c66",
+    "posterSha256": "847e953544f92d73f6f663ae1e96c22e15d4639eed40aee9ca8a19a4f1444299",
+    "width": 1000,
+    "height": 760,
+    "transparent": true,
+    "bytes": 230584
+  },
+  {
+    "asset": "mobile-reference",
+    "sourceSha256": "b2639025cd55f5dd7ff528b695bb98b494d290fa9b887c0d7d7b6fc99fe853f7",
+    "posterSha256": "9c8d2586a589b0fb6a3da979b83ef43b6ac3b9f7d3be1f94b14a4c1c583d4d8c",
+    "width": 1000,
+    "height": 760,
+    "transparent": true,
+    "bytes": 145959
+  }
+]

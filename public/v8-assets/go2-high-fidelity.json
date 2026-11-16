@@ -1,0 +1,734 @@
+{
+  "name": "Unitree Go2 · 开源精细网格参考",
+  "fileName": "go2-high-fidelity.glb",
+  "url": "/v8-assets/go2-high-fidelity.glb",
+  "previewUrl": "/v8-assets/go2-source-preview.png",
+  "mimeType": "model/gltf-binary",
+  "size": 5819168,
+  "sha256": "210753eef58c3fba7f392c8604a276f22b897887831e0fe6d30ffd989aceec53",
+  "license": "BSD-3-Clause",
+  "licenseUrl": "/v8-assets/go2-LICENSE.txt",
+  "sourceRepository": "https://github.com/google-deepmind/mujoco_menagerie",
+  "sourceCommit": "71f066ad0be9cd271f7ed58c030243ef157af9f4",
+  "sourceDirectory": "unitree_go2",
+  "sourceHashVerified": true,
+  "uniqueSourceMeshes": 16,
+  "visualParts": 33,
+  "joints": 12,
+  "triangleInstances": 398432,
+  "uniqueTriangles": 196748,
+  "sourceStats": [
+    {
+      "name": "base_0",
+      "sourceVertices": 8738,
+      "retainedVertexTuples": 8738,
+      "triangles": 10130,
+      "sourceNormals": 8738
+    },
+    {
+      "name": "base_1",
+      "sourceVertices": 6389,
+      "retainedVertexTuples": 6389,
+      "triangles": 3962,
+      "sourceNormals": 6389
+    },
+    {
+      "name": "base_2",
+      "sourceVertices": 2120,
+      "retainedVertexTuples": 2120,
+      "triangles": 2005,
+      "sourceNormals": 2120
+    },
+    {
+      "name": "base_3",
+      "sourceVertices": 2870,
+      "retainedVertexTuples": 2870,
+      "triangles": 2320,
+      "sourceNormals": 2870
+    },
+    {
+      "name": "base_4",
+      "sourceVertices": 46564,
+      "retainedVertexTuples": 46564,
+      "triangles": 59511,
+      "sourceNormals": 46564
+    },
+    {
+      "name": "hip_0",
+      "sourceVertices": 19634,
+      "retainedVertexTuples": 19634,
+      "triangles": 18056,
+      "sourceNormals": 19634
+    },
+    {
+      "name": "hip_1",
+      "sourceVertices": 18329,
+      "retainedVertexTuples": 18329,
+      "triangles": 18972,
+      "sourceNormals": 18329
+    },
+    {
+      "name": "thigh_0",
+      "sourceVertices": 19093,
+      "retainedVertexTuples": 19093,
+      "triangles": 18425,
+      "sourceNormals": 19093
+    },
+    {
+      "name": "thigh_1",
+      "sourceVertices": 9591,
+      "retainedVertexTuples": 9591,
+      "triangles": 11708,
+      "sourceNormals": 9591
+    },
+    {
+      "name": "thigh_mirror_0",
+      "sourceVertices": 19051,
+      "retainedVertexTuples": 19051,
+      "triangles": 18417,
+      "sourceNormals": 19051
+    },
+    {
+      "name": "thigh_mirror_1",
+      "sourceVertices": 9580,
+      "retainedVertexTuples": 9580,
+      "triangles": 11708,
+      "sourceNormals": 9580
+    },
+    {
+      "name": "calf_0",
+      "sourceVertices": 5878,
+      "retainedVertexTuples": 5878,
+      "triangles": 6512,
+      "sourceNormals": 5878
+    },
+    {
+      "name": "calf_1",
+      "sourceVertices": 2396,
+      "retainedVertexTuples": 2396,
+      "triangles": 2053,
+      "sourceNormals": 2396
+    },
+    {
+      "name": "calf_mirror_0",
+      "sourceVertices": 5877,
+      "retainedVertexTuples": 5877,
+      "triangles": 6512,
+      "sourceNormals": 5877
+    },
+    {
+      "name": "calf_mirror_1",
+      "sourceVertices": 2399,
+      "retainedVertexTuples": 2399,
+      "triangles": 2053,
+      "sourceNormals": 2399
+    },
+    {
+      "name": "foot",
+      "sourceVertices": 13190,
+      "retainedVertexTuples": 13190,
+      "triangles": 4404,
+      "sourceNormals": 13190
+    }
+  ],
+  "home": [
+    0,
+    0,
+    0.27,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0.9,
+    -1.8,
+    0,
+    0.9,
+    -1.8,
+    0,
+    0.9,
+    -1.8,
+    0,
+    0.9,
+    -1.8
+  ],
+  "jointTransforms": [
+    {
+      "name": "FL_hip_joint",
+      "body": "FL_hip",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "name": "FL_thigh_joint",
+      "body": "FL_thigh",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "angle": 0.9
+    },
+    {
+      "name": "FL_calf_joint",
+      "body": "FL_calf",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "angle": -1.8
+    },
+    {
+      "name": "FR_hip_joint",
+      "body": "FR_hip",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "name": "FR_thigh_joint",
+      "body": "FR_thigh",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "angle": 0.9
+    },
+    {
+      "name": "FR_calf_joint",
+      "body": "FR_calf",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "angle": -1.8
+    },
+    {
+      "name": "RL_hip_joint",
+      "body": "RL_hip",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "name": "RL_thigh_joint",
+      "body": "RL_thigh",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "angle": 0.9
+    },
+    {
+      "name": "RL_calf_joint",
+      "body": "RL_calf",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "angle": -1.8
+    },
+    {
+      "name": "RR_hip_joint",
+      "body": "RR_hip",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "name": "RR_thigh_joint",
+      "body": "RR_thigh",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "angle": 0.9
+    },
+    {
+      "name": "RR_calf_joint",
+      "body": "RR_calf",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "angle": -1.8
+    }
+  ],
+  "coordinateMapping": "MJCF(x,y,z) -> Web(-x,z,y)",
+  "displayGroundOffset": 0.029440038657863966,
+  "bounds": {
+    "min": [
+      -0.33195799589157104,
+      2.0816681711721685e-17,
+      -0.16201300081610678
+    ],
+    "max": [
+      0.400094650422532,
+      0.38827404127188536,
+      0.1620130008161068
+    ],
+    "size": [
+      0.732052646314103,
+      0.38827404127188536,
+      0.3240260016322136
+    ]
+  },
+  "parts": [
+    {
+      "id": "base.base_0",
+      "label": "机身可视分件 01 · base_0",
+      "sourceMesh": "base_0",
+      "sourceBody": "base",
+      "category": "housing",
+      "material": "black",
+      "explodeLocal": [
+        -0.056,
+        0,
+        0.07
+      ]
+    },
+    {
+      "id": "base.base_1",
+      "label": "机身可视分件 02 · base_1",
+      "sourceMesh": "base_1",
+      "sourceBody": "base",
+      "category": "housing",
+      "material": "black",
+      "explodeLocal": [
+        -0.028,
+        0,
+        0.14500000000000002
+      ]
+    },
+    {
+      "id": "base.base_2",
+      "label": "机身可视分件 03 · base_2",
+      "sourceMesh": "base_2",
+      "sourceBody": "base",
+      "category": "perception",
+      "material": "black",
+      "explodeLocal": [
+        0.15,
+        0,
+        0.22
+      ]
+    },
+    {
+      "id": "base.base_3",
+      "label": "机身可视分件 04 · base_3",
+      "sourceMesh": "base_3",
+      "sourceBody": "base",
+      "category": "housing",
+      "material": "white",
+      "explodeLocal": [
+        0.028,
+        0,
+        0.295
+      ]
+    },
+    {
+      "id": "base.base_4",
+      "label": "机身可视分件 05 · base_4",
+      "sourceMesh": "base_4",
+      "sourceBody": "base",
+      "category": "housing",
+      "material": "gray",
+      "explodeLocal": [
+        0.056,
+        0,
+        0.37
+      ]
+    },
+    {
+      "id": "FL_hip.hip_0",
+      "label": "左前髋部可视分件 A",
+      "sourceMesh": "hip_0",
+      "sourceBody": "FL_hip",
+      "category": "hip",
+      "material": "metal",
+      "explodeLocal": [
+        0.025,
+        0.10000000000000002,
+        0.014999999999999986
+      ]
+    },
+    {
+      "id": "FL_hip.hip_1",
+      "label": "左前髋部可视分件 B",
+      "sourceMesh": "hip_1",
+      "sourceBody": "FL_hip",
+      "category": "hip",
+      "material": "gray",
+      "explodeLocal": [
+        0.025,
+        0.2,
+        0.014999999999999986
+      ]
+    },
+    {
+      "id": "FL_thigh.thigh_0",
+      "label": "左前上腿可视分件 A",
+      "sourceMesh": "thigh_0",
+      "sourceBody": "FL_thigh",
+      "category": "thigh",
+      "material": "metal",
+      "explodeLocal": [
+        0.003790345562354344,
+        0.14,
+        0.02890732226474707
+      ]
+    },
+    {
+      "id": "FL_thigh.thigh_1",
+      "label": "左前上腿可视分件 B",
+      "sourceMesh": "thigh_1",
+      "sourceBody": "FL_thigh",
+      "category": "thigh",
+      "material": "gray",
+      "explodeLocal": [
+        0.003790345562354358,
+        0.24000000000000005,
+        0.028907322264747043
+      ]
+    },
+    {
+      "id": "FL_calf.calf_0",
+      "label": "左前小腿可视分件 A",
+      "sourceMesh": "calf_0",
+      "sourceBody": "FL_calf",
+      "category": "calf",
+      "material": "gray",
+      "explodeLocal": [
+        -0.0275427308227449,
+        0.17999999999999997,
+        -0.053771720995573535
+      ]
+    },
+    {
+      "id": "FL_calf.calf_1",
+      "label": "左前小腿可视分件 B",
+      "sourceMesh": "calf_1",
+      "sourceBody": "FL_calf",
+      "category": "calf",
+      "material": "black",
+      "explodeLocal": [
+        -0.027542730822744887,
+        0.28,
+        -0.05377172099557356
+      ]
+    },
+    {
+      "id": "FL_calf.foot",
+      "label": "左前足端可视分件",
+      "sourceMesh": "foot",
+      "sourceBody": "FL_calf",
+      "category": "foot",
+      "material": "black",
+      "explodeLocal": [
+        -0.08629224904480613,
+        0.21999999999999997,
+        -0.10039246861587342
+      ]
+    },
+    {
+      "id": "FR_hip.hip_0",
+      "label": "右前髋部可视分件 A",
+      "sourceMesh": "hip_0",
+      "sourceBody": "FR_hip",
+      "category": "hip",
+      "material": "metal",
+      "explodeLocal": [
+        0.025,
+        -0.10000000000000002,
+        0.015000000000000013
+      ]
+    },
+    {
+      "id": "FR_hip.hip_1",
+      "label": "右前髋部可视分件 B",
+      "sourceMesh": "hip_1",
+      "sourceBody": "FR_hip",
+      "category": "hip",
+      "material": "gray",
+      "explodeLocal": [
+        0.025,
+        -0.2,
+        0.014999999999999986
+      ]
+    },
+    {
+      "id": "FR_thigh.thigh_mirror_0",
+      "label": "右前上腿可视分件 A",
+      "sourceMesh": "thigh_mirror_0",
+      "sourceBody": "FR_thigh",
+      "category": "thigh",
+      "material": "metal",
+      "explodeLocal": [
+        0.003790345562354386,
+        -0.14000000000000004,
+        0.02890732226474707
+      ]
+    },
+    {
+      "id": "FR_thigh.thigh_mirror_1",
+      "label": "右前上腿可视分件 B",
+      "sourceMesh": "thigh_mirror_1",
+      "sourceBody": "FR_thigh",
+      "category": "thigh",
+      "material": "gray",
+      "explodeLocal": [
+        0.003790345562354386,
+        -0.24000000000000002,
+        0.0289073222647471
+      ]
+    },
+    {
+      "id": "FR_calf.calf_mirror_0",
+      "label": "右前小腿可视分件 A",
+      "sourceMesh": "calf_mirror_0",
+      "sourceBody": "FR_calf",
+      "category": "calf",
+      "material": "gray",
+      "explodeLocal": [
+        -0.027542730822745016,
+        -0.17999999999999994,
+        -0.053771720995573716
+      ]
+    },
+    {
+      "id": "FR_calf.calf_mirror_1",
+      "label": "右前小腿可视分件 B",
+      "sourceMesh": "calf_mirror_1",
+      "sourceBody": "FR_calf",
+      "category": "calf",
+      "material": "black",
+      "explodeLocal": [
+        -0.027542730822745068,
+        -0.27999999999999997,
+        -0.053771720995573785
+      ]
+    },
+    {
+      "id": "FR_calf.foot",
+      "label": "右前足端可视分件",
+      "sourceMesh": "foot",
+      "sourceBody": "FR_calf",
+      "category": "foot",
+      "material": "black",
+      "explodeLocal": [
+        -0.08629224904480624,
+        -0.21999999999999997,
+        -0.10039246861587355
+      ]
+    },
+    {
+      "id": "RL_hip.hip_0",
+      "label": "左后髋部可视分件 A",
+      "sourceMesh": "hip_0",
+      "sourceBody": "RL_hip",
+      "category": "hip",
+      "material": "metal",
+      "explodeLocal": [
+        -0.025,
+        0.10000000000000002,
+        0.014999999999999986
+      ]
+    },
+    {
+      "id": "RL_hip.hip_1",
+      "label": "左后髋部可视分件 B",
+      "sourceMesh": "hip_1",
+      "sourceBody": "RL_hip",
+      "category": "hip",
+      "material": "gray",
+      "explodeLocal": [
+        -0.025,
+        0.2,
+        0.014999999999999986
+      ]
+    },
+    {
+      "id": "RL_thigh.thigh_0",
+      "label": "左后上腿可视分件 A",
+      "sourceMesh": "thigh_0",
+      "sourceBody": "RL_thigh",
+      "category": "thigh",
+      "material": "metal",
+      "explodeLocal": [
+        -0.02729015285117889,
+        0.14,
+        -0.010259023216627111
+      ]
+    },
+    {
+      "id": "RL_thigh.thigh_1",
+      "label": "左后上腿可视分件 B",
+      "sourceMesh": "thigh_1",
+      "sourceBody": "RL_thigh",
+      "category": "thigh",
+      "material": "gray",
+      "explodeLocal": [
+        -0.02729015285117886,
+        0.24000000000000005,
+        -0.010259023216627139
+      ]
+    },
+    {
+      "id": "RL_calf.calf_0",
+      "label": "左后小腿可视分件 A",
+      "sourceMesh": "calf_0",
+      "sourceBody": "RL_calf",
+      "category": "calf",
+      "material": "gray",
+      "explodeLocal": [
+        -0.05862322923627815,
+        0.17999999999999997,
+        -0.014605375514199409
+      ]
+    },
+    {
+      "id": "RL_calf.calf_1",
+      "label": "左后小腿可视分件 B",
+      "sourceMesh": "calf_1",
+      "sourceBody": "RL_calf",
+      "category": "calf",
+      "material": "black",
+      "explodeLocal": [
+        -0.05862322923627815,
+        0.28,
+        -0.014605375514199381
+      ]
+    },
+    {
+      "id": "RL_calf.foot",
+      "label": "左后足端可视分件",
+      "sourceMesh": "foot",
+      "sourceBody": "RL_calf",
+      "category": "foot",
+      "material": "black",
+      "explodeLocal": [
+        -0.11737274745833938,
+        0.21999999999999995,
+        -0.061226123134499266
+      ]
+    },
+    {
+      "id": "RR_hip.hip_0",
+      "label": "右后髋部可视分件 A",
+      "sourceMesh": "hip_0",
+      "sourceBody": "RR_hip",
+      "category": "hip",
+      "material": "metal",
+      "explodeLocal": [
+        -0.025,
+        -0.10000000000000002,
+        0.015000000000000013
+      ]
+    },
+    {
+      "id": "RR_hip.hip_1",
+      "label": "右后髋部可视分件 B",
+      "sourceMesh": "hip_1",
+      "sourceBody": "RR_hip",
+      "category": "hip",
+      "material": "gray",
+      "explodeLocal": [
+        -0.025,
+        -0.2,
+        0.014999999999999986
+      ]
+    },
+    {
+      "id": "RR_thigh.thigh_mirror_0",
+      "label": "右后上腿可视分件 A",
+      "sourceMesh": "thigh_mirror_0",
+      "sourceBody": "RR_thigh",
+      "category": "thigh",
+      "material": "metal",
+      "explodeLocal": [
+        -0.027290152851178848,
+        -0.14000000000000004,
+        -0.010259023216627111
+      ]
+    },
+    {
+      "id": "RR_thigh.thigh_mirror_1",
+      "label": "右后上腿可视分件 B",
+      "sourceMesh": "thigh_mirror_1",
+      "sourceBody": "RR_thigh",
+      "category": "thigh",
+      "material": "gray",
+      "explodeLocal": [
+        -0.027290152851178834,
+        -0.24000000000000002,
+        -0.010259023216627083
+      ]
+    },
+    {
+      "id": "RR_calf.calf_mirror_0",
+      "label": "右后小腿可视分件 A",
+      "sourceMesh": "calf_mirror_0",
+      "sourceBody": "RR_calf",
+      "category": "calf",
+      "material": "gray",
+      "explodeLocal": [
+        -0.05862322923627826,
+        -0.17999999999999994,
+        -0.014605375514199562
+      ]
+    },
+    {
+      "id": "RR_calf.calf_mirror_1",
+      "label": "右后小腿可视分件 B",
+      "sourceMesh": "calf_mirror_1",
+      "sourceBody": "RR_calf",
+      "category": "calf",
+      "material": "black",
+      "explodeLocal": [
+        -0.05862322923627829,
+        -0.27999999999999997,
+        -0.014605375514199576
+      ]
+    },
+    {
+      "id": "RR_calf.foot",
+      "label": "右后足端可视分件",
+      "sourceMesh": "foot",
+      "sourceBody": "RR_calf",
+      "category": "foot",
+      "material": "black",
+      "explodeLocal": [
+        -0.11737274745833948,
+        -0.21999999999999995,
+        -0.06122612313449939
+      ]
+    }
+  ],
+  "limitations": [
+    "Original detailed visual meshes, not native CAD or certified manufacturing parts.",
+    "Visual material segmentation is not a manufacturer BOM. No invented internal parts are included.",
+    "Home pose follows source MJCF keyframe; inertial quaternions are not body rotations.",
+    "Display-only ground alignment, PBR material remapping and illustrative exploded displacement are recorded derivations.",
+    "No hardware performance, manufacturing tolerance, engineering validation or endorsement is claimed."
+  ]
+}

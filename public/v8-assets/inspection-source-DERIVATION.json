@@ -1,0 +1,687 @@
+{
+  "schema": "embodex.derived-quadruped-mesh/1",
+  "sourceRepository": "https://github.com/google-deepmind/mujoco_menagerie",
+  "sourceCommit": "71f066ad0be9cd271f7ed58c030243ef157af9f4",
+  "sourceDirectory": "unitree_go2",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2016-2022 HangZhou YuShu TECHNOLOGY CO.,LTD. (Unitree Robotics)",
+  "generatedAtUtc": "2026-10-20T12:04:15.407784+00:00",
+  "sourceFiles": [
+    {
+      "path": "LICENSE",
+      "bytes": 1537,
+      "sha256": "7e2dfda59b98e38d123f539b59ecb637ffd8908d19e09f7765884a309f010d40"
+    },
+    {
+      "path": "go2.xml",
+      "bytes": 11678,
+      "sha256": "50adb09a4365293e2acdaf2010ae35a82b0f09fea18ae51806fef91e310ed04a"
+    },
+    {
+      "path": "assets/base_0.obj",
+      "bytes": 1330465,
+      "sha256": "8cdc53719002a5ee737d867904e534a6d6fa930b616bdcc1b3131e577d4e46c0"
+    },
+    {
+      "path": "assets/base_1.obj",
+      "bytes": 811791,
+      "sha256": "39d2f4724ff64dd5a0640c308fd98902a2946660a8d033ec8dbf368fd5af0dd6"
+    },
+    {
+      "path": "assets/base_2.obj",
+      "bytes": 294090,
+      "sha256": "29cae463f95d678e4ede863c36c9b19b0d356b8340412add10670d70bdcc3095"
+    },
+    {
+      "path": "assets/base_3.obj",
+      "bytes": 379093,
+      "sha256": "f51ba43bf300e68957a0c1aa83eaf3e4926f4ac7e64a0d6c33ae5d21fcbcf5f6"
+    },
+    {
+      "path": "assets/base_4.obj",
+      "bytes": 7776234,
+      "sha256": "49ddec0129546e5dd2075d5beacf7f207baa2860aeff7626818e64d2efbf3821"
+    },
+    {
+      "path": "assets/calf_0.obj",
+      "bytes": 877174,
+      "sha256": "4a818cd563c5b7e2a271504442d05fd777d38cbaa028d4a10ad29c9f87bb355e"
+    },
+    {
+      "path": "assets/calf_1.obj",
+      "bytes": 326865,
+      "sha256": "51950c3a153ae3208592df86ea11c9d6756f8f645ebca5caf6910c61aeb03817"
+    },
+    {
+      "path": "assets/calf_mirror_0.obj",
+      "bytes": 876538,
+      "sha256": "6dc0406207a1c08a5953fd5962aca1a270fd06593d30d100205e05c1b32d4af2"
+    },
+    {
+      "path": "assets/calf_mirror_1.obj",
+      "bytes": 327261,
+      "sha256": "f84f5af90b914633165beb3a5493ee499169144c5797dcf04c6eb5842f74b31a"
+    },
+    {
+      "path": "assets/foot.obj",
+      "bytes": 1144729,
+      "sha256": "df9e78a7c0110d02557439010f2a5f11f0ec4fd907b32704145dbd6aa7affc0b"
+    },
+    {
+      "path": "assets/hip_0.obj",
+      "bytes": 2863864,
+      "sha256": "cc29932ab4d251ce3f72389ec4c1f757e44eee138b87e772b648c2bc76b506cd"
+    },
+    {
+      "path": "assets/hip_1.obj",
+      "bytes": 2767918,
+      "sha256": "3fd5bd9b2ef6abe622c0739d3c67eaa1679b19b47132951972c4892a779ea7cf"
+    },
+    {
+      "path": "assets/thigh_0.obj",
+      "bytes": 2841868,
+      "sha256": "bb3edfe6a7b04f4f4dff1ce7b05d426ddce941e276cc6372fb542055893c71ec"
+    },
+    {
+      "path": "assets/thigh_1.obj",
+      "bytes": 1491320,
+      "sha256": "3a631822f9f7d2114b1b79dcdff5abf95103630abb7d91d1f3b8b18117132ed2"
+    },
+    {
+      "path": "assets/thigh_mirror_0.obj",
+      "bytes": 2817674,
+      "sha256": "07abaedce761f1dd48647384ac14ba1959276bc78d5a2a62051e8f1c6093933b"
+    },
+    {
+      "path": "assets/thigh_mirror_1.obj",
+      "bytes": 1482261,
+      "sha256": "db984a3e983eabbc9b38183427cca9ab0bb3bdb049f9eab030e06edda36579d6"
+    }
+  ],
+  "output": {
+    "file": "mesh-data.js",
+    "bytes": 9269354,
+    "sha256": "7ad2fb100188a173c7c16d3aa918480bc529f5e1763dc03e2a607c77ce8fe8e9",
+    "encoding": "Base64 little-endian Float32 positions/normals; Uint32 triangle indices. Group start/count are index-buffer units."
+  },
+  "changes": [
+    "OBJ vertex/normal tuples are converted to indexed buffers without global resampling, decimation or normalization.",
+    "Source body hierarchy, visual local poses, 12 inherited joint definitions and home qpos are preserved from MJCF.",
+    "Complete rectangular torso and head lettering regions are projected onto shared quadratic side-shell surfaces, fitted from surrounding unlettered shell strips. This includes glyph bottoms, walls, islands and adjacent shell vertices in base_3/base_4; transition strips use smooth blending.",
+    "All fully projected region normals are replaced by analytic fitted-surface normals. Front tiny lettering and walls are flattened to x=0.327064 m, with matching black material. Exactly degenerate triangles are removed.",
+    "Within mesh-data.js, all other mesh positions and normals remain as published, aside from shared front-region coordinates in base_2.",
+    "Original text-only base_3 geometry is merged into the repaired shell. A complete positive-Y side cover is clipped from the merged surface at x=[-0.100,0.101] m and z=[0.011,0.055] m, and assigned to base_3 so exploded views contain a continuous generic panel. Only boundary-crossing triangles are split; there is no global retessellation.",
+    "Runtime geometry and material modifications are recorded separately in runtimeChanges; the frozen mesh-data.js bytes are unchanged by those operations."
+  ],
+  "geometryAssurance": "Whole-region local surface reconstruction removes manufacturer text relief. Runtime refinements retain the rig and contact geometry. The integrating agent reviewed assembled and fully exploded browser views. This derivative is not manufacturer CAD or evidence of physical validation.",
+  "surfacePatches": [
+    {
+      "name": "torso",
+      "inner": [
+        -0.1,
+        0.101,
+        0.011,
+        0.055
+      ],
+      "outer": [
+        -0.116,
+        0.117,
+        0.003,
+        0.065
+      ],
+      "minAbsY": 0.06,
+      "side": 1,
+      "xc": 0.0005000000000000004,
+      "zc": 0.034,
+      "coeff": [
+        85.6512450579093,
+        0.009922278819284747,
+        -7.513298637601324,
+        0.0294695558517162,
+        0.006642069918033891,
+        -1.4582350687519081
+      ],
+      "sampleCount": 335,
+      "medianFitResidualMm": 1.1481084279661502,
+      "maxFitResidualMm": 7.24086063072594
+    },
+    {
+      "name": "torso",
+      "inner": [
+        -0.1,
+        0.101,
+        0.011,
+        0.055
+      ],
+      "outer": [
+        -0.116,
+        0.117,
+        0.003,
+        0.065
+      ],
+      "minAbsY": 0.06,
+      "side": -1,
+      "xc": 0.0005000000000000004,
+      "zc": 0.034,
+      "coeff": [
+        -85.9841137199597,
+        -0.00991851632714721,
+        7.518998931189968,
+        -0.030268360331291152,
+        -0.006638389892646111,
+        1.450735699518185
+      ],
+      "sampleCount": 341,
+      "medianFitResidualMm": 1.1624807750898896,
+      "maxFitResidualMm": 7.194991789017351
+    },
+    {
+      "name": "head",
+      "inner": [
+        0.242,
+        0.305,
+        0.016,
+        0.057
+      ],
+      "outer": [
+        0.232,
+        0.315,
+        0.006,
+        0.066
+      ],
+      "minAbsY": 0.028,
+      "side": 1,
+      "xc": 0.2735,
+      "zc": 0.036000000000000004,
+      "coeff": [
+        56.12054500797709,
+        -7.303553598534094,
+        -5.368723819640542,
+        -0.18923143637683904,
+        -0.6261589654171105,
+        -2.239091689827679
+      ],
+      "sampleCount": 303,
+      "medianFitResidualMm": 1.160079839127036,
+      "maxFitResidualMm": 5.697720968826218
+    },
+    {
+      "name": "head",
+      "inner": [
+        0.242,
+        0.305,
+        0.016,
+        0.057
+      ],
+      "outer": [
+        0.232,
+        0.315,
+        0.006,
+        0.066
+      ],
+      "minAbsY": 0.028,
+      "side": -1,
+      "xc": 0.2735,
+      "zc": 0.036000000000000004,
+      "coeff": [
+        -56.0602256673174,
+        7.237564792336107,
+        5.283104092183044,
+        0.1334500649550865,
+        0.5212296899446405,
+        2.114177901903315
+      ],
+      "sampleCount": 306,
+      "medianFitResidualMm": 1.203269859580267,
+      "maxFitResidualMm": 5.928350816029216
+    }
+  ],
+  "repairCoordinateCounts": {
+    "front-whole-panel": 949,
+    "torso-whole-panel": 4888,
+    "head-whole-panel": 4759
+  },
+  "meshes": [
+    {
+      "mesh": "base_0",
+      "sourceVertexRecords": 8738,
+      "sourceNormalRecords": 8738,
+      "sourceTriangles": 10130,
+      "outputIndexedVertices": 8738,
+      "outputTriangles": 10130,
+      "modifiedCoordinateKeys": 0,
+      "repairedIncidentFaces": 0,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    },
+    {
+      "mesh": "base_1",
+      "sourceVertexRecords": 6389,
+      "sourceNormalRecords": 6389,
+      "sourceTriangles": 3962,
+      "outputIndexedVertices": 6389,
+      "outputTriangles": 3962,
+      "modifiedCoordinateKeys": 0,
+      "repairedIncidentFaces": 0,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    },
+    {
+      "mesh": "base_2",
+      "sourceVertexRecords": 2120,
+      "sourceNormalRecords": 2120,
+      "sourceTriangles": 2005,
+      "outputIndexedVertices": 2120,
+      "outputTriangles": 2005,
+      "modifiedCoordinateKeys": 483,
+      "repairedIncidentFaces": 512,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    },
+    {
+      "mesh": "base_3",
+      "sourceVertexRecords": 2870,
+      "sourceNormalRecords": 2870,
+      "sourceTriangles": 2320,
+      "outputIndexedVertices": 4490,
+      "outputTriangles": 4699,
+      "modifiedCoordinateKeys": 2491,
+      "repairedIncidentFaces": 4701,
+      "collapsedDegenerateFacesRemoved": 2,
+      "groups": [
+        {
+          "start": 0,
+          "count": 14097,
+          "material": "white"
+        }
+      ]
+    },
+    {
+      "mesh": "base_4",
+      "sourceVertexRecords": 46564,
+      "sourceNormalRecords": 46564,
+      "sourceTriangles": 59511,
+      "outputIndexedVertices": 44453,
+      "outputTriangles": 56705,
+      "modifiedCoordinateKeys": 7934,
+      "repairedIncidentFaces": 16554,
+      "collapsedDegenerateFacesRemoved": 931,
+      "groups": [
+        {
+          "start": 0,
+          "count": 168690,
+          "material": "white"
+        },
+        {
+          "start": 168690,
+          "count": 1425,
+          "material": "black"
+        }
+      ]
+    },
+    {
+      "mesh": "calf_0",
+      "sourceVertexRecords": 5878,
+      "sourceNormalRecords": 5878,
+      "sourceTriangles": 6512,
+      "outputIndexedVertices": 5878,
+      "outputTriangles": 6512,
+      "modifiedCoordinateKeys": 0,
+      "repairedIncidentFaces": 0,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    },
+    {
+      "mesh": "calf_1",
+      "sourceVertexRecords": 2396,
+      "sourceNormalRecords": 2396,
+      "sourceTriangles": 2053,
+      "outputIndexedVertices": 2396,
+      "outputTriangles": 2053,
+      "modifiedCoordinateKeys": 0,
+      "repairedIncidentFaces": 0,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    },
+    {
+      "mesh": "calf_mirror_0",
+      "sourceVertexRecords": 5877,
+      "sourceNormalRecords": 5877,
+      "sourceTriangles": 6512,
+      "outputIndexedVertices": 5877,
+      "outputTriangles": 6512,
+      "modifiedCoordinateKeys": 0,
+      "repairedIncidentFaces": 0,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    },
+    {
+      "mesh": "calf_mirror_1",
+      "sourceVertexRecords": 2399,
+      "sourceNormalRecords": 2399,
+      "sourceTriangles": 2053,
+      "outputIndexedVertices": 2399,
+      "outputTriangles": 2053,
+      "modifiedCoordinateKeys": 0,
+      "repairedIncidentFaces": 0,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    },
+    {
+      "mesh": "foot",
+      "sourceVertexRecords": 13190,
+      "sourceNormalRecords": 13190,
+      "sourceTriangles": 4404,
+      "outputIndexedVertices": 13190,
+      "outputTriangles": 4404,
+      "modifiedCoordinateKeys": 0,
+      "repairedIncidentFaces": 0,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    },
+    {
+      "mesh": "hip_0",
+      "sourceVertexRecords": 19634,
+      "sourceNormalRecords": 19634,
+      "sourceTriangles": 18056,
+      "outputIndexedVertices": 19634,
+      "outputTriangles": 18056,
+      "modifiedCoordinateKeys": 0,
+      "repairedIncidentFaces": 0,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    },
+    {
+      "mesh": "hip_1",
+      "sourceVertexRecords": 18329,
+      "sourceNormalRecords": 18329,
+      "sourceTriangles": 18972,
+      "outputIndexedVertices": 18329,
+      "outputTriangles": 18972,
+      "modifiedCoordinateKeys": 0,
+      "repairedIncidentFaces": 0,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    },
+    {
+      "mesh": "thigh_0",
+      "sourceVertexRecords": 19093,
+      "sourceNormalRecords": 19093,
+      "sourceTriangles": 18425,
+      "outputIndexedVertices": 19093,
+      "outputTriangles": 18425,
+      "modifiedCoordinateKeys": 0,
+      "repairedIncidentFaces": 0,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    },
+    {
+      "mesh": "thigh_1",
+      "sourceVertexRecords": 9591,
+      "sourceNormalRecords": 9591,
+      "sourceTriangles": 11708,
+      "outputIndexedVertices": 9591,
+      "outputTriangles": 11708,
+      "modifiedCoordinateKeys": 0,
+      "repairedIncidentFaces": 0,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    },
+    {
+      "mesh": "thigh_mirror_0",
+      "sourceVertexRecords": 19051,
+      "sourceNormalRecords": 19051,
+      "sourceTriangles": 18417,
+      "outputIndexedVertices": 19051,
+      "outputTriangles": 18417,
+      "modifiedCoordinateKeys": 0,
+      "repairedIncidentFaces": 0,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    },
+    {
+      "mesh": "thigh_mirror_1",
+      "sourceVertexRecords": 9580,
+      "sourceNormalRecords": 9580,
+      "sourceTriangles": 11708,
+      "outputIndexedVertices": 9580,
+      "outputTriangles": 11708,
+      "modifiedCoordinateKeys": 0,
+      "repairedIncidentFaces": 0,
+      "collapsedDegenerateFacesRemoved": 0,
+      "groups": []
+    }
+  ],
+  "upstreamArchiveModified": false,
+  "runtimeRecordedAtUtc": "2026-10-21T13:15:26.356788+00:00",
+  "runtimeFiles": [
+    {
+      "path": "../../concept-model.js",
+      "bytes": 16556,
+      "sha256": "6825c00e9a77c386b4a580162376cad8e968f4188ca69f65b697317390de4282"
+    },
+    {
+      "path": "../../concept-platform.js",
+      "bytes": 29504,
+      "sha256": "f3aa4aee3e4f7c9b51f5510522f77cc4e27103a7ae08a55342942b83342ff12a"
+    },
+    {
+      "path": "../../electronics-kit.js",
+      "bytes": 8942,
+      "sha256": "668d418afac62a69ff10f003482cc55b72a7957ee1ff7845bc2e3090e8e036d3"
+    },
+    {
+      "path": "../../sheetmetal-task.js",
+      "bytes": 2143,
+      "sha256": "b0e6635d10dc62e7fc0b97e8ea4e3e9a4261b307de3d231b16029aea57006cf2"
+    },
+    {
+      "path": "../../human-workcell.js",
+      "bytes": 23674,
+      "sha256": "e2ac47581778fc6e9ca70263fdf686b48f699a3e698194b5bfc575a3aabce10f"
+    },
+    {
+      "path": "../../assembly-detail.js",
+      "bytes": 31785,
+      "sha256": "c41ca4e12b8d8259936a1d3b2f30adbb8413e0c1785fc9703cbfe154f7acce68"
+    },
+    {
+      "path": "../../case-polish.css",
+      "bytes": 5950,
+      "sha256": "a40460c268605495f6b6f67c83f80c2a9bb9757610b431d355cae01d0e450b49"
+    },
+    {
+      "path": "../../collision-world.js",
+      "bytes": 8752,
+      "sha256": "45f94f33223d92399ab19e76a3f7d30596501e3cace520ca873caca334ce071a"
+    },
+    {
+      "path": "../../experiment-controls.js",
+      "bytes": 32709,
+      "sha256": "18afe6ba246e23e5fa2e63a49e18284fb25cda7f972745a957f21c11430e30c8"
+    },
+    {
+      "path": "../../industrial-workspace.js",
+      "bytes": 51072,
+      "sha256": "d1760ab81fca31237856a632fd4e102121de521dbae278a449fd486b101c6d96"
+    },
+    {
+      "path": "../../industrial-workspace.css",
+      "bytes": 16584,
+      "sha256": "5ef3f3841a4d0f1991b7ab913876fdbc67a1fe41a714f9abff9ac6f437af512c"
+    },
+    {
+      "path": "../../industrial-arm.js",
+      "bytes": 44208,
+      "sha256": "63a74095f641ed1273890f925d3b6c964939f4ddf573aa54ae5e7d431cc24422"
+    },
+    {
+      "path": "../../industrial-aerial.js",
+      "bytes": 20475,
+      "sha256": "488af3493138ce73a2c631d355c6f152ee4772fc3c4fd2e13fb206b7f91ed515"
+    },
+    {
+      "path": "../../industrial-mobile.js",
+      "bytes": 51347,
+      "sha256": "3b7cf9634db9a2d40b3b934e03729597542eb837b1bdbaa117d164b6bd3ea836"
+    },
+    {
+      "path": "../../industrial-ui.js",
+      "bytes": 9261,
+      "sha256": "1aec601c882724190bd2004cc6978b43c74f5eb70c304ef21932084828fc1bcc"
+    },
+    {
+      "path": "../../aerial-wind-task.js",
+      "bytes": 26716,
+      "sha256": "9679810f89c29f3243188740e80a09612c7055dd4c75d622640cbe2d64902e75"
+    },
+    {
+      "path": "../../robot-view.js",
+      "bytes": 45853,
+      "sha256": "dbc4dc5854c182f67b5ca67138af06a118c1ea325e51b1df051cd0e34d94f62f"
+    },
+    {
+      "path": "../../sim-view.js",
+      "bytes": 110011,
+      "sha256": "4020c2423cf3b7ca24d1a4fcd2f9f8d9d8c87ff5a7e71579c60f06361e5a820b"
+    },
+    {
+      "path": "../../workbench-theme.css",
+      "bytes": 24456,
+      "sha256": "b505a36fd4d5c6ca262226f1c927e8e50c39eb2de83a2f9ec7de10399e172f72"
+    },
+    {
+      "path": "../../sensor-renderer.js",
+      "bytes": 16065,
+      "sha256": "e3bf698f5f759a46feff5cde1b1765106ea4c412ff840d8505badc32c2a1333a"
+    }
+  ],
+  "runtimeCoordinateConvention": "Native mesh local coordinates in metres; side=+1 for thigh meshes and -1 for thigh_mirror meshes. Listed modification dimensions use millimetres.",
+  "runtimeChanges": [
+    {
+      "id": "body-side-panels",
+      "files": [
+        "../../concept-model.js"
+      ],
+      "meshes": [
+        "base_3",
+        "base_4"
+      ],
+      "description": "Both meshes receive the same bounded local-Y side shaping: a longer central flat region with smoothly rounded upper/lower bevel transitions and blended normals. The shared side-cover boundary is transformed identically.",
+      "maxAbsoluteLocalYDisplacementMm": 6,
+      "localXAndZUnchanged": true
+    },
+    {
+      "id": "outer-shoulder-covers",
+      "files": [
+        "../../concept-model.js"
+      ],
+      "meshes": [
+        "thigh_1",
+        "thigh_mirror_1"
+      ],
+      "description": "Only the outer cover, selected by side*y > -30 mm, receives soft six-direction edge shaping. Ellipse-normalized coordinates determine angular weights; vertices are not projected onto an ellipse. Front-facing convex points are lightly flattened inward with a normal-based smooth blend. Inner motor-disc positions and rig transforms are unchanged.",
+      "outlineCenterXZMm": [
+        -2.2445,
+        16.6105
+      ],
+      "ellipseSemiaxesXZMm": [
+        46.1485,
+        33.9665
+      ],
+      "maxXZDisplacementMm": 3,
+      "frontFlattenSelection": "side*normal.y > 0.65 and side*y > 8 mm",
+      "frontFlattenTargetOutwardYMm": 15.6,
+      "maxInwardYFlattenMm": 1
+    },
+    {
+      "id": "upper-leg-material-groups",
+      "files": [
+        "../../concept-model.js"
+      ],
+      "meshes": [
+        "thigh_0",
+        "thigh_mirror_0"
+      ],
+      "description": "The upper-leg shell is white and the original inner shoulder-ring region remains silver-gray metal. Two material groups are formed by reordering the existing triangle indices; source surface coordinates and triangle membership are preserved.",
+      "materialGroupCount": 2
+    },
+    {
+      "id": "surface-service-seams",
+      "files": [
+        "../../concept-model.js"
+      ],
+      "description": "Four tapered dark-blue ribbons are ray-fitted to the actual outward upper-leg surface. Each uses its original thigh_0 part root and part ID, and follows the same pose, explode, focus, variant and reset operations.",
+      "count": 4,
+      "maxWidthMm": 1.3,
+      "localZLengthMm": 93,
+      "localXCenterMm": -10,
+      "localZRangeMm": [
+        -148,
+        -55
+      ],
+      "outwardLocalYOffsetMm": 0.18,
+      "offsetDirection": "local +Y for thigh_0; local -Y for thigh_mirror_0",
+      "addedCatalogIDs": 0
+    },
+    {
+      "id": "front-optic-details",
+      "files": [
+        "../../concept-model.js"
+      ],
+      "description": "Two dark-blue front optical details are added to base_2; each consists of two concentric discs. All four meshes retain the original base.base_2 parent and part ID.",
+      "opticCount": 2,
+      "discCount": 4,
+      "discRadiiMm": [
+        6.4,
+        3.5
+      ],
+      "addedCatalogIDs": 0
+    },
+    {
+      "id": "binocular-inspection-shell",
+      "files": [
+        "../../concept-platform.js"
+      ],
+      "description": "The visible-light and thermal camera modules use adjacent white extruded half-shells with a matching rounded XY perimeter. Their Z faces meet continuously. Existing sensor anchors and part IDs are retained.",
+      "eachHalfXYZMm": [
+        52,
+        37,
+        50
+      ],
+      "combinedXYZMm": [
+        52,
+        37,
+        100
+      ],
+      "xyCornerRadiusMm": 2.5
+    },
+    {
+      "id": "procedural-inspection-hardware",
+      "files": [
+        "../../concept-platform.js"
+      ],
+      "description": "Separate runtime meshes provide the inspection tray with clipped front corners, standoffs, finned compute box, camera mounts and optics, near-range/downward sensing, status indication, and optional range-sensor hardware. These remain conceptual added hardware rather than upstream licensed geometry."
+    }
+  ],
+  "runtimeValidation": {
+    "checks": 56,
+    "failures": 0,
+    "fetchCalls": 0,
+    "bodyPartCount": 33,
+    "catalogCount": 54,
+    "actuatedJointCount": 12,
+    "sharedBodyBoundaryVertexRecords": 284,
+    "maxSharedBodyBoundaryGapMm": 0,
+    "maxMeasuredShoulderXZMovementMm": 3.000001900724111,
+    "maxMeasuredShoulderFlattenMm": 1.0000001639127731,
+    "innerShoulderChangedVertexRecords": 0,
+    "testedPoses": [
+      "stand",
+      "crouch",
+      "inspect",
+      "step"
+    ],
+    "checksInclude": "Finite buffers, triangle/index-group preservation, seam fit and part identity, camera-shell join, physical foot contact, sensor frame, 24 walking samples, explode, focus, dimensions/reset, export/apply and cross-instance disposal. Measured limits include Float32 rounding."
+  }
+}

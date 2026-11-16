@@ -1,0 +1,246 @@
+{
+  "schema": "embodex.opensource-asset-provenance/1.0",
+  "name": "Unitree Go2 reference model",
+  "purpose": "Separate open-source structural and kinematic reference; not the WD-01 concept configuration or a certified engineering twin",
+  "source_repository": "https://github.com/google-deepmind/mujoco_menagerie",
+  "source_commit": "71f066ad0be9cd271f7ed58c030243ef157af9f4",
+  "source_directory": "unitree_go2",
+  "source_directory_url": "https://github.com/google-deepmind/mujoco_menagerie/tree/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2",
+  "retrieved_at_utc": "2026-10-18T07:02:43.9531169Z",
+  "license": {
+    "spdx": "BSD-3-Clause",
+    "local_file": "LICENSE",
+    "scope": "Entire unitree_go2 directory including assets; directory license and root per-directory attribution agree",
+    "copyright": "Copyright (c) 2016-2022 HangZhou YuShu TECHNOLOGY CO.,LTD. (Unitree Robotics)",
+    "redistribution_notes": [
+      "Retain the complete copyright notice, conditions, and disclaimer.",
+      "Redistributed binary/conversion outputs must reproduce the notice, conditions, and disclaimer in documentation/materials.",
+      "Do not imply endorsement by the copyright holder or contributors."
+    ],
+    "source_license_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/LICENSE"
+  },
+  "upstream_origin": "Unitree Robotics publicly available go2_description URDF, converted and simplified to MJCF by MuJoCo Menagerie",
+  "units": "metres, radians, kilograms",
+  "coordinate_frame": "MJCF: Z up; robot forward +X; left +Y. Inertial quaternions are not body-frame rotations.",
+  "reference_mass_kg": 15.206408,
+  "reference_mass_note": "Sum of MJCF link inertial masses; a simulation-model parameter, not an independently measured product mass.",
+  "home_pose": {
+    "base_xyz_m": [
+      0,
+      0,
+      0.27
+    ],
+    "base_quaternion_wxyz": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "leg_order": [
+      "FL",
+      "FR",
+      "RL",
+      "RR"
+    ],
+    "joint_order_per_leg": [
+      "hip_abduction",
+      "thigh_pitch",
+      "calf_pitch"
+    ],
+    "joint_qpos_rad": [
+      0,
+      0.9,
+      -1.8
+    ]
+  },
+  "visual_assembly": "Use go2.xml body hierarchy, inherited joint axes, mesh material assignment, geom-local poses, and keyframe home; the zero-joint default XML pose is not the home stance.",
+  "engineering_boundary": [
+    "This reference does not establish WD-01 payload, battery capacity, endurance, thermography, docking, or safety performance.",
+    "Original OBJ and MJCF files are stored unchanged and hash-verified.",
+    "No MJX, scene textures, or unrelated robot assets are included."
+  ],
+  "original_asset_count": 20,
+  "original_total_bytes": 30321381.0,
+  "files": [
+    {
+      "path": "LICENSE",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/LICENSE",
+      "bytes": 1537,
+      "sha256": "7e2dfda59b98e38d123f539b59ecb637ffd8908d19e09f7765884a309f010d40",
+      "git_blob_sha1": "b646a94d1e171bc58d5761c1bcaadaa579a4d757",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "README.md",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/README.md",
+      "bytes": 2435,
+      "sha256": "b1384664f8bd60ef4333e340aa06c6f2b1175a5329e3ea9345da3dde20362069",
+      "git_blob_sha1": "a1c7451dd564861ca2a50625badfe158c189ca36",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "go2.png",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/go2.png",
+      "bytes": 1896586,
+      "sha256": "838924da23e5034f7210a14e3540194750ab1469110c6d3832909dc55968a5e9",
+      "git_blob_sha1": "e3578b753170ecb363b679450e5ecf3b8a8a8496",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "go2.xml",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/go2.xml",
+      "bytes": 11678,
+      "sha256": "50adb09a4365293e2acdaf2010ae35a82b0f09fea18ae51806fef91e310ed04a",
+      "git_blob_sha1": "78657f2a5ba464cab1fbf7a7aebb21579110df34",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/base_0.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/base_0.obj",
+      "bytes": 1330465,
+      "sha256": "8cdc53719002a5ee737d867904e534a6d6fa930b616bdcc1b3131e577d4e46c0",
+      "git_blob_sha1": "f2e688236f56bd2738468a213ea61fd2f69baf0b",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/base_1.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/base_1.obj",
+      "bytes": 811791,
+      "sha256": "39d2f4724ff64dd5a0640c308fd98902a2946660a8d033ec8dbf368fd5af0dd6",
+      "git_blob_sha1": "e9a44eb668902b7f934f8328e4d33c6e38df8db9",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/base_2.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/base_2.obj",
+      "bytes": 294090,
+      "sha256": "29cae463f95d678e4ede863c36c9b19b0d356b8340412add10670d70bdcc3095",
+      "git_blob_sha1": "bc661591f01c760072cb9f3fb6d80b2545bb1d53",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/base_3.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/base_3.obj",
+      "bytes": 379093,
+      "sha256": "f51ba43bf300e68957a0c1aa83eaf3e4926f4ac7e64a0d6c33ae5d21fcbcf5f6",
+      "git_blob_sha1": "5c98393efeb90c26bef36279e000d738dff8ff9d",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/base_4.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/base_4.obj",
+      "bytes": 7776234,
+      "sha256": "49ddec0129546e5dd2075d5beacf7f207baa2860aeff7626818e64d2efbf3821",
+      "git_blob_sha1": "1f45bc4fa84604cd8e69124084805104b96be188",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/calf_0.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/calf_0.obj",
+      "bytes": 877174,
+      "sha256": "4a818cd563c5b7e2a271504442d05fd777d38cbaa028d4a10ad29c9f87bb355e",
+      "git_blob_sha1": "1d9be4c392ba62a96a07043096d96d0a981fb9e9",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/calf_1.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/calf_1.obj",
+      "bytes": 326865,
+      "sha256": "51950c3a153ae3208592df86ea11c9d6756f8f645ebca5caf6910c61aeb03817",
+      "git_blob_sha1": "01197551ce8ad7d7118590f949897c72a57b0e11",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/calf_mirror_0.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/calf_mirror_0.obj",
+      "bytes": 876538,
+      "sha256": "6dc0406207a1c08a5953fd5962aca1a270fd06593d30d100205e05c1b32d4af2",
+      "git_blob_sha1": "710bbe9ee5190e182e31730acb0e9ec6ed4c87db",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/calf_mirror_1.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/calf_mirror_1.obj",
+      "bytes": 327261,
+      "sha256": "f84f5af90b914633165beb3a5493ee499169144c5797dcf04c6eb5842f74b31a",
+      "git_blob_sha1": "6b27378a4e44d27bf974ec7ba311f5725c4dc2da",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/foot.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/foot.obj",
+      "bytes": 1144729,
+      "sha256": "df9e78a7c0110d02557439010f2a5f11f0ec4fd907b32704145dbd6aa7affc0b",
+      "git_blob_sha1": "edc559eeb5b385e3df55573074e35ce1ef227a46",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/hip_0.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/hip_0.obj",
+      "bytes": 2863864,
+      "sha256": "cc29932ab4d251ce3f72389ec4c1f757e44eee138b87e772b648c2bc76b506cd",
+      "git_blob_sha1": "551f12437a92cf72206aa56dca412c88220b6c4a",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/hip_1.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/hip_1.obj",
+      "bytes": 2767918,
+      "sha256": "3fd5bd9b2ef6abe622c0739d3c67eaa1679b19b47132951972c4892a779ea7cf",
+      "git_blob_sha1": "ed2bebfc4c2febfef45a1c67c40397964a6df6e4",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/thigh_0.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/thigh_0.obj",
+      "bytes": 2841868,
+      "sha256": "bb3edfe6a7b04f4f4dff1ce7b05d426ddce941e276cc6372fb542055893c71ec",
+      "git_blob_sha1": "0b99756ffd7d3391abeff66fc510a1ae7c5a4c8b",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/thigh_1.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/thigh_1.obj",
+      "bytes": 1491320,
+      "sha256": "3a631822f9f7d2114b1b79dcdff5abf95103630abb7d91d1f3b8b18117132ed2",
+      "git_blob_sha1": "5005be1de988534d0f4b94ec51eaf1ff41ba7970",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/thigh_mirror_0.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/thigh_mirror_0.obj",
+      "bytes": 2817674,
+      "sha256": "07abaedce761f1dd48647384ac14ba1959276bc78d5a2a62051e8f1c6093933b",
+      "git_blob_sha1": "7c2fd2ce44ed9e4f1d550ca1847c7c9e58f91be1",
+      "license": "BSD-3-Clause",
+      "modified": false
+    },
+    {
+      "path": "assets/thigh_mirror_1.obj",
+      "source_url": "https://raw.githubusercontent.com/google-deepmind/mujoco_menagerie/71f066ad0be9cd271f7ed58c030243ef157af9f4/unitree_go2/assets/thigh_mirror_1.obj",
+      "bytes": 1482261,
+      "sha256": "db984a3e983eabbc9b38183427cca9ab0bb3bdb049f9eab030e06edda36579d6",
+      "git_blob_sha1": "fb7e0b4963b9889fe6b1127bbca03844163b1bc7",
+      "license": "BSD-3-Clause",
+      "modified": false
+    }
+  ]
+}

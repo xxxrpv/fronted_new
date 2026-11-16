@@ -1,0 +1,24 @@
+{
+  "schema": "embodex.supplied-mobile-reference/1",
+  "sourceKind": "supplied-concept-reference",
+  "sourceFile": "网站设计/EmbodiX官网-交付版/dist/cases/warehouse/industrial-mobile.js",
+  "sourceSha256": "3b7cf9634db9a2d40b3b934e03729597542eb837b1bdbaa117d164b6bd3ea836",
+  "sourceBytes": 51347,
+  "sourceHashVerified": true,
+  "declaredSourceAuthorship": "Original AMR concept, authored for the local Embodex interactive example",
+  "license": "No separate SPDX license declared in supplied original concept source",
+  "authorization": "User explicitly requested reuse of the supplied official-site source for this implementation",
+  "conversion": {
+    "geometrySimplified": false,
+    "capturedSourceTransforms": true,
+    "sourceVisibleTriangleCountPreserved": true,
+    "sourceRobotOnly": true,
+    "fabricatedInternals": false
+  },
+  "generatedFile": {
+    "name": "mobile-reference.glb",
+    "size": 3781220,
+    "sha256": "b2639025cd55f5dd7ff528b695bb98b494d290fa9b887c0d7d7b6fc99fe853f7"
+  },
+  "sourceNoticeUrl": "/v8-assets/mobile-source-NOTICE.txt"
+}

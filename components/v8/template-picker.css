@@ -1,0 +1,95 @@
+/* Source: official delivery site's glass-button and compact model mode dock.
+   Local template identity and preview image remain authoritative in Studio. */
+.v8 .vtemplate-picker {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  margin: 0 0 22px;
+  padding: 4px 2px 8px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: #c8ced4 transparent;
+}
+.v8 .vtemplate-picker > button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 78px;
+  min-width: 250px;
+  max-width: 360px;
+  padding: 8px 18px 8px 8px;
+  border: 1px solid var(--vglass-border, #d0d5db);
+  border-top-color: #fff;
+  border-radius: 16px;
+  background: #ffffffb8;
+  box-shadow: var(--vglass-shadow, inset 0 1px 0 #fff);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+  backdrop-filter: blur(18px) saturate(1.15);
+  text-align: left;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  transition: border-color .18s, background .18s, box-shadow .18s;
+}
+.v8 .vtemplate-picker > button:hover {
+  border-color: #b8c0c9;
+  background: #ffffffb8;
+}
+.v8 .vtemplate-picker > button.active {
+  border-color: #afb8c2;
+  border-top-color: #fff;
+  background: #ffffffb8;
+  box-shadow: inset 0 1px 0 #fff, 0 0 0 2px #dde3ea70, 0 6px 19px #5e6c7b0d;
+}
+.v8 .vtemplate-picker > button:focus-visible {
+  outline: 3px solid #9eaab5;
+  outline-offset: 3px;
+}
+.v8 .vtemplate-picker img {
+  width: 76px;
+  height: 58px;
+  flex: 0 0 76px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.v8 .vtemplate-picker > button > span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.v8 .vtemplate-picker strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4f5b67;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.v8 .vtemplate-picker small {
+  font-size: 11px;
+  color: #6d7d8e;
+  line-height: 1.55;
+}
+@media (max-width: 767px) {
+  .v8 .vtemplate-picker { margin-bottom: 17px; gap: 10px; }
+  .v8 .vtemplate-picker > button { min-width: 240px; max-width: calc(100vw - 44px); padding-right: 15px; }
+  .v8 .vtemplate-picker img { width: 66px; height: 54px; flex-basis: 66px; }
+  .v8 .vtemplate-picker strong { font-size: 12px; }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .v8 .vtemplate-picker > button {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: #fbfcfc;
+    border-color: #adb6bf;
+  }
+  .v8 .vtemplate-picker > button.active { background: #ebeff3; border-color: #8996a4; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v8 .vtemplate-picker > button { transition: none; }
+}
+@media (forced-colors: active) {
+  .v8 .vtemplate-picker > button { background: Canvas; border-color: ButtonText; box-shadow: none; }
+  .v8 .vtemplate-picker > button.active { border: 2px solid Highlight; }
+  .v8 .vtemplate-picker :is(strong, small) { color: CanvasText; }
+}

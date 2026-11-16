@@ -1,0 +1,24 @@
+{
+  "outputMeshCount": 266,
+  "triangleInstances": 91488,
+  "gltfMeshes": 64,
+  "gltfMaterials": 14,
+  "nodeCount": 339,
+  "bytes": 2479184,
+  "sha256": "d4ab4891c2d96570cc872686050173b3a396214988b370d2fd540d594070b266",
+  "bounds": [
+    -0.4100000000474974,
+    -2.086162576020456e-9,
+    -0.5860000001899899,
+    0.4100000000474974,
+    0.456000000026077,
+    0.5490000001899898
+  ],
+  "size": [
+    0.8200000000949949,
+    0.45600000211223957,
+    1.1350000003799798
+  ],
+  "source": "scripts/create-showcase-mobile.mjs",
+  "engineeringValidated": false
+}

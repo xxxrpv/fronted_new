@@ -1,0 +1,24 @@
+node_modules/
+.next/
+.next-production/
+.pnpm-store/
+.env.local
+.env*.local
+*.tsbuildinfo
+test-results/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Mesh and binary assets
+*.stl
+*.urdf
+*.bin
+*.glb
+*.mp4
+
+

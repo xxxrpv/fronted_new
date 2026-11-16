@@ -1,0 +1,9 @@
+/* V0.6: a cool-grey 3D workbench keeps the pale concept shell distinct. */
+#main-stage{background:#dce5ed;border-color:#cbd9e5}
+#main-stage .source-loading{background:rgba(220,229,237,.9);color:#58738c}
+#main-stage .source-info{color:#6e879c}
+#main-stage .stage-caption>span{color:#7b94a9}
+#main-stage .scene-readouts small{color:#7892a7}
+#main-stage .scene-readouts b{color:#607f99}
+#main-stage .scene-readouts em{color:#8098ac}
+#main-stage .dimension-toggle>span{color:#8098aa}

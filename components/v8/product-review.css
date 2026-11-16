@@ -1,0 +1,308 @@
+/* Product review: fewer competing actions, more space for the current design. */
+body:has(.v8) {
+  height: auto;
+  overflow-x: clip;
+}
+.v8 .ventry-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 26px 0 30px;
+}
+.v8 .ventry-options > button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  text-align: left;
+  border: 1px solid var(--vglass-border);
+  border-radius: 18px;
+  background: var(--vglass);
+  box-shadow: inset 0 1px 0 white;
+  color: #55626f;
+}
+.v8 .ventry-options > button:hover {
+  border-color: #adb6bf;
+  background: #fcfcfd;
+}
+.v8 .ventry-options > button > svg:last-child {
+  margin-left: auto;
+}
+.v8 .ventry-options strong,
+.v8 .ventry-options small {
+  display: block;
+}
+.v8 .ventry-options strong {
+  font-size: 15px;
+  color: var(--vink);
+}
+.v8 .ventry-options small {
+  color: #718191;
+  margin-top: 3px;
+  font-size: 12px;
+}
+.v8 .vmain[data-stage="workspace"] .vpage-intro {
+  margin-bottom: 24px;
+}
+.v8 .vmain[data-stage="workspace"] .vprompt textarea {
+  min-height: 108px;
+}
+.v8 .vmain[data-stage="workspace"] .vrecent {
+  margin-top: 0;
+}
+.v8 .vlist-tools {
+  flex-wrap: wrap;
+}
+.v8 .vcatalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.v8 .vmodal:has(.vcatalog-grid) {
+  width: min(1000px, calc(100vw - 40px));
+}
+.v8 .vcatalog-grid article {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.v8 .vcatalog-grid img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 14px;
+  background: #f2f4f7;
+}
+.v8 .vcatalog-grid p {
+  font-size: 12px;
+}
+.v8 .vcatalog-grid summary {
+  font-size: 12px;
+  color: #687786;
+  cursor: pointer;
+}
+.v8 .vcatalog-grid .vbutton {
+  margin-top: auto;
+}
+.v8 .vstart-art {
+  display: grid;
+  place-items: center;
+  color: #a2adb8;
+}
+.v8 .vstart-card > p {
+  min-height: 50px;
+}
+.v8 .vconcept-limitation {
+  min-height: 0;
+  margin-bottom: 16px;
+}
+.v8 .vconcept-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+.v8 .vconcept-grid:has(> :only-child) {
+  grid-template-columns: minmax(0, 650px);
+}
+.v8 .vconcept-limitation summary {
+  cursor: pointer;
+  color: #6a7a8a;
+}
+.v8 .vconcept-limitation p {
+  margin-top: 8px;
+  font-size: 12px;
+}
+.v8 .vmain[data-detail="true"] .vcanvas-caption {
+  top: auto;
+  bottom: 17px;
+  left: 20px;
+  padding: 5px 10px;
+  background: #fcfcfce3;
+  border: 1px solid #e1e6ec;
+  border-radius: 8px;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+.v8 .vmain[data-detail="true"] .vcanvas-tools {
+  top: 18px;
+}
+.v8 .vmain[data-detail="true"] .vstudio-footer {
+  margin: 14px 0;
+}
+.v8 .vversion-panel {
+  padding: 12px 16px;
+}
+.v8 .vversion-track > button {
+  min-width: 110px;
+  max-width: 250px;
+  padding: 9px 12px;
+}
+.v8 .vversion-track > button > span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+}
+.v8 .vversion-track > button > small {
+  display: none;
+}
+.v8 .vsource-details {
+  margin-top: 16px;
+}
+.v8 .vdelivery-card > .vartifact-list {
+  margin-top: 22px;
+}
+.v8 .vpreview-controls {
+  position: relative;
+  bottom: auto;
+  right: auto;
+  width: max-content;
+  margin: 0 24px 24px auto;
+}
+.v8:has(.model-workspace-main) .vpreview-controls {
+  right: auto;
+}
+.v8 .vassistant:not(.open) {
+  bottom: 58px;
+}
+.v8 .vassistant-toggle {
+  min-width: 0;
+  padding: 12px 16px;
+}
+.v8 .vfooter {
+  margin-top: 28px;
+}
+@media (min-width: 821px) {
+  .v8 .vmain[data-stage="cad"] .vstudio-canvas {
+    height: clamp(360px, calc(100dvh - 510px), 680px);
+    min-height: 360px;
+  }
+  .v8 .vmain[data-stage="library"],
+  .v8 .vmain[data-detail="true"] {
+    padding-top: 22px;
+  }
+  .v8 .vmain[data-stage="library"] .vtemplate-picker {
+    gap: 10px;
+    margin-bottom: 17px;
+  }
+  .v8 .vmain[data-stage="library"] .vtemplate-picker > button {
+    padding: 8px 12px;
+    min-height: 58px;
+  }
+  .v8 .vmain[data-stage="library"] .vtemplate-picker img {
+    height: 40px;
+    width: 64px;
+  }
+  .v8 .vmain[data-stage="library"] .vheading {
+    margin-bottom: 18px;
+  }
+  .v8 .vmain[data-stage="library"] .vheading .veyebrow {
+    display: none;
+  }
+  .v8 .vmain[data-stage="library"] .vmodel-workspace .vstudio-canvas,
+  .v8 .vmain[data-stage="library"] .vmodel-inspector {
+    height: clamp(400px, calc(100dvh - 370px), 760px);
+    min-height: 400px;
+  }
+  .v8 .vmain[data-stage="library"] .vstudio-footer {
+    margin: 12px 0;
+  }
+  .v8 .vmain[data-detail="true"] .vdetail-top {
+    margin-bottom: 12px;
+  }
+  .v8 .vmain[data-detail="true"] .vheading {
+    margin-bottom: 12px;
+  }
+  .v8 .vmain[data-detail="true"] .vheading .veyebrow {
+    display: none;
+  }
+  .v8 .vmain[data-detail="true"] .vbranch-switch {
+    margin-bottom: 12px;
+  }
+  .v8 .vmain[data-detail="true"] .vstudio-canvas {
+    height: clamp(380px, calc(100dvh - 400px), 700px);
+    min-height: 380px;
+  }
+}
+@media (max-width: 820px) {
+  .v8 .vheading:has(> .vactions) {
+    flex-wrap: wrap;
+  }
+  .v8 .vheading:has(> .vactions) > div:first-child {
+    flex-basis: 100%;
+  }
+  .v8 .vheading > .vactions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .v8 .studio-heading h1 {
+    display: block;
+  }
+  .v8 .studio-heading h1 > .vbadge {
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  .v8 .vmain[data-detail="true"] .vdetail-top > span {
+    display: none;
+  }
+  .v8 .vdelivery-summary > .vactions {
+    flex: 0 0 100%;
+    padding-left: 50px;
+    gap: 8px;
+  }
+  .v8 .vcatalog-grid {
+    grid-template-columns: 1fr;
+  }
+  .v8 .vcatalog-grid img {
+    height: 150px;
+  }
+  .v8 .ventry-options {
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .v8 .ventry-options > button {
+    padding: 13px;
+    gap: 9px;
+  }
+  .v8 .ventry-options > button > svg:last-child {
+    display: none;
+  }
+  .v8 .ventry-options small {
+    font-size: 11px;
+  }
+  .v8 .ventry-options strong {
+    font-size: 13px;
+  }
+  .v8 .vmain[data-stage="workspace"] .vsection-head {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .v8 .vmain[data-detail="true"] .vcanvas-tools {
+    top: 12px;
+    right: 12px;
+  }
+  .v8 .vmain[data-detail="true"] .vstudio-footer {
+    align-items: stretch;
+  }
+}
+@media (max-width: 480px) {
+  .v8 .ventry-options > button {
+    align-items: flex-start;
+  }
+  .v8 .ventry-options > button > svg {
+    display: none;
+  }
+  .v8 .vlist-tools {
+    width: 100%;
+    gap: 8px;
+  }
+  .v8 .vlist-tools .vsearch {
+    width: 100%;
+  }
+  .v8 .vlist-tools select {
+    flex: 1;
+    min-width: 0;
+  }
+  .v8 .vmain[data-stage="workspace"] .vprompt textarea {
+    min-height: 110px;
+  }
+}

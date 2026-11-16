@@ -1,0 +1,361 @@
+{
+  "license": "CC0-1.0",
+  "source": "Original procedural fixtures authored for Embodex V8 development preview",
+  "sample": true,
+  "engineeringValidated": false,
+  "assets": [
+    {
+      "id": "compact",
+      "label": "轻型轮式巡检平台",
+      "url": "/v8-assets/compact.glb",
+      "previewUrl": "/v8-assets/compact.svg",
+      "mimeType": "model/gltf-binary",
+      "size": 26588,
+      "parts": [
+        "chassis",
+        "body",
+        "blue-panel",
+        "wheel",
+        "wheel-hub",
+        "headlight",
+        "side-rail",
+        "mast",
+        "sensor",
+        "bumper"
+      ],
+      "meshCount": 21,
+      "assemblies": [
+        {
+          "id": "chassis",
+          "label": "底盘主体",
+          "direction": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cover",
+          "label": "上部机壳",
+          "direction": [
+            0,
+            0.45,
+            0
+          ]
+        },
+        {
+          "id": "wheel-left-rear",
+          "label": "左后轮组",
+          "direction": [
+            -0.7,
+            0.03,
+            -0.25
+          ]
+        },
+        {
+          "id": "wheel-left-front",
+          "label": "左前轮组",
+          "direction": [
+            -0.7,
+            0.03,
+            0.25
+          ]
+        },
+        {
+          "id": "wheel-right-rear",
+          "label": "右后轮组",
+          "direction": [
+            0.7,
+            0.03,
+            -0.25
+          ]
+        },
+        {
+          "id": "wheel-right-front",
+          "label": "右前轮组",
+          "direction": [
+            0.7,
+            0.03,
+            0.25
+          ]
+        },
+        {
+          "id": "front",
+          "label": "前部防护与照明",
+          "direction": [
+            0,
+            0.1,
+            0.6
+          ]
+        },
+        {
+          "id": "sensor",
+          "label": "传感器与支架",
+          "direction": [
+            0,
+            0.85,
+            -0.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quadruped",
+      "label": "四足巡检平台",
+      "url": "/v8-assets/quadruped.glb",
+      "previewUrl": "/v8-assets/quadruped.svg",
+      "mimeType": "model/gltf-binary",
+      "size": 21916,
+      "parts": [
+        "body",
+        "backbone",
+        "front-visor",
+        "camera-eye",
+        "hip-joint",
+        "upper-leg",
+        "knee-joint",
+        "lower-leg",
+        "foot",
+        "sensor"
+      ],
+      "meshCount": 27,
+      "assemblies": [
+        {
+          "id": "body",
+          "label": "机身与前视组件",
+          "direction": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cover",
+          "label": "顶部防护盖",
+          "direction": [
+            0,
+            0.4,
+            0
+          ]
+        },
+        {
+          "id": "leg-left-rear",
+          "label": "左后腿总成",
+          "direction": [
+            -0.7,
+            0.03,
+            -0.55
+          ]
+        },
+        {
+          "id": "leg-left-front",
+          "label": "左前腿总成",
+          "direction": [
+            -0.7,
+            0.03,
+            0.55
+          ]
+        },
+        {
+          "id": "leg-right-rear",
+          "label": "右后腿总成",
+          "direction": [
+            0.7,
+            0.03,
+            -0.55
+          ]
+        },
+        {
+          "id": "leg-right-front",
+          "label": "右前腿总成",
+          "direction": [
+            0.7,
+            0.03,
+            0.55
+          ]
+        },
+        {
+          "id": "sensor",
+          "label": "顶部感知组件",
+          "direction": [
+            0,
+            0.85,
+            -0.15
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tripod",
+      "label": "三足全向探索概念",
+      "url": "/v8-assets/tripod.glb",
+      "previewUrl": "/v8-assets/tripod.svg",
+      "mimeType": "model/gltf-binary",
+      "size": 19340,
+      "parts": [
+        "central-core",
+        "chest",
+        "visor",
+        "sensor",
+        "hip-joint",
+        "upper-leg",
+        "knee-joint",
+        "lower-leg",
+        "foot"
+      ],
+      "meshCount": 20,
+      "assemblies": [
+        {
+          "id": "core",
+          "label": "中央支承核心",
+          "direction": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "shell",
+          "label": "上部机壳",
+          "direction": [
+            0,
+            0.4,
+            0
+          ]
+        },
+        {
+          "id": "sensor",
+          "label": "感知头部组件",
+          "direction": [
+            0,
+            0.8,
+            0.2
+          ]
+        },
+        {
+          "id": "leg-1",
+          "label": "第 1 支撑腿总成",
+          "direction": [
+            0,
+            0.02,
+            0.85
+          ]
+        },
+        {
+          "id": "leg-2",
+          "label": "第 2 支撑腿总成",
+          "direction": [
+            0.7361215932167728,
+            0.02,
+            -0.4249999999999998
+          ]
+        },
+        {
+          "id": "leg-3",
+          "label": "第 3 支撑腿总成",
+          "direction": [
+            -0.7361215932167727,
+            0.02,
+            -0.4250000000000004
+          ]
+        }
+      ]
+    },
+    {
+      "id": "conveyor",
+      "label": "模块化分拣输送线",
+      "url": "/v8-assets/conveyor.glb",
+      "previewUrl": "/v8-assets/conveyor.svg",
+      "mimeType": "model/gltf-binary",
+      "size": 18644,
+      "parts": [
+        "belt",
+        "side-frame",
+        "safety-stripe",
+        "leg",
+        "foot",
+        "roller",
+        "gantry",
+        "crossbeam",
+        "sensor",
+        "parcel",
+        "side-console"
+      ],
+      "meshCount": 31,
+      "assemblies": [
+        {
+          "id": "belt",
+          "label": "输送面与辊筒",
+          "direction": [
+            0,
+            0.65,
+            0
+          ]
+        },
+        {
+          "id": "rail--1",
+          "label": "左侧防护梁",
+          "direction": [
+            -0.6,
+            0.1,
+            0
+          ]
+        },
+        {
+          "id": "frame",
+          "label": "支承框架",
+          "direction": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "rail-1",
+          "label": "右侧防护梁",
+          "direction": [
+            0.6,
+            0.1,
+            0
+          ]
+        },
+        {
+          "id": "gantry",
+          "label": "检测门架",
+          "direction": [
+            0,
+            0.35,
+            -0.8
+          ]
+        },
+        {
+          "id": "sensor",
+          "label": "检测传感器组件",
+          "direction": [
+            0,
+            0.9,
+            0.5
+          ]
+        },
+        {
+          "id": "parcel",
+          "label": "样例物料",
+          "direction": [
+            0.75,
+            0.4,
+            0.65
+          ]
+        },
+        {
+          "id": "console",
+          "label": "操作面板",
+          "direction": [
+            0.7,
+            0.25,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "@embodix/frontend-v8",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "node scripts/server-local.mjs",
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/server-local.mjs --production",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test:local-preview": "node test/run-local-preview.mjs",
+    "test": "node test/run-tests.mjs",
+    "lint": "eslint components/v8 lib/v8 app/v8 app/design app/api/v8-preview app/requirements/page.tsx components/PlatformProviders.tsx components/V8ShellRouter.tsx proxy.ts scripts/*.mjs",
+    "test:v8": "node test/run-v8.mjs",
+    "test:v8:source": "node test/run-v8-reference.mjs",
+    "test:e2e": "node test/v8-e2e.mjs",
+    "format": "prettier --write components/v8 lib/v8 app/v8 app/design test/v8* test/run-v8*.mjs scripts/*.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-markdown": "10.1.0",
+    "remark-gfm": "4.0.1",
+    "three": "0.184.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5",
+    "@types/three": "0.184.0",
+    "eslint": "^9.39.1",
+    "jiti": "^2.6.1",
+    "playwright": "1.62.1",
+    "prettier": "3.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4"
+  }
+}

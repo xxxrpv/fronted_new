@@ -1,0 +1,54 @@
+/* Shared controls, with task-specific contents supplied by each project. */
+/* Match the industrial stage. The ID selector also overrides the older v6
+   stage background, which otherwise masks the requirements gradient. */
+#interactive #main-stage{background:#dce5ed}
+#interactive #main-stage[data-workspace-mode="requirements"]{background:radial-gradient(ellipse at 85% 0,#e6eefc 0,transparent 55%),linear-gradient(145deg,#f7faff,#eef4fa)}
+#interactive #sensor-mode-bar{left:14px;right:auto;bottom:57px;width:max-content;max-width:calc(100% - 28px);padding:4px;gap:3px;border-radius:9px}
+#interactive #sensor-mode-bar>span{display:none}
+#interactive .sensor-mode-options{flex:initial;gap:2px}
+#interactive #sensor-mode-bar .glass-button{flex:initial;min-height:25px;height:25px;font-size:9px;padding:3px 9px;border-radius:6px}
+#interactive #sensor-compare{margin-left:2px}
+#interactive #mission-controls{display:flex;align-items:center;gap:5px;left:14px;right:14px;bottom:14px;min-height:34px;flex-wrap:nowrap}
+#interactive #mission-controls[hidden]{display:none}
+#interactive #mission-controls .glass-button,#interactive #mission-controls .glass-icon{height:34px;min-height:34px;padding:0 8px;font-size:9px;border-radius:7px;line-height:1;white-space:nowrap}
+#interactive #mission-controls .glass-icon{width:30px;flex:0 0 30px;padding:7px}
+#interactive #mission-controls .ui-icon{height:12px;width:12px}
+#interactive #mission-camera{position:static;inset:auto;display:flex;align-items:center;gap:4px;margin-left:7px;padding-left:8px;border-left:1px solid #c7d9e6;background:none;box-shadow:none}
+#interactive #mission-camera .glass-button{font-size:9px;padding:0 8px}
+#interactive #sim-estop{margin-left:auto}
+#interactive .sensor-legend{max-width:185px;padding:7px 9px;left:15px;top:137px;background:#f9fcffc9}
+#interactive .sensor-legend p{display:none}
+#interactive .sensor-legend b{font-size:9px;font-weight:450}
+#interactive .sensor-color-scale{height:3px;margin-bottom:5px}
+#interactive .sensor-comparison-labels:after{bottom:95px}
+#interactive .dimension-toggle>span,#interactive .scene-annotation,.inspector-heading>span{display:none!important}
+#interactive .precision-detail .mode-dock [data-mode]{display:none}
+#interactive .precision-detail .mode-dock{pointer-events:auto}
+#interactive .precision-detail #gait-toggle{display:none}
+#interactive .human-physical>:not(.human-workcell-controls){display:none!important}
+#interactive .human-workcell-controls[hidden]{display:none!important}
+#interactive .human-workcell-controls .tool-description{margin-bottom:18px}
+#interactive .human-workcell-controls .experiment-control{margin:19px 0}
+#interactive .human-workcell-controls .experiment-actions{margin-top:22px}
+#interactive .stage-bottom .canvas-status{display:none}
+#interactive .stage-bottom{justify-content:flex-end}
+#interactive .project-ready{font-size:9px}
+@media(min-width:761px) and (max-width:1000px){#interactive #mission-controls{gap:4px;left:12px;right:12px}#interactive #mission-controls .glass-button{padding-inline:6px;font-size:8px}#interactive #mission-camera{gap:3px;margin-left:2px;padding-left:5px}#interactive #mission-camera .glass-button{padding-inline:6px;font-size:8px}#interactive #sim-start{gap:4px}}
+@media(max-width:760px){#interactive #mission-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;left:12px;right:12px;bottom:12px}#interactive #mission-camera{display:contents;border:0}#interactive #mission-controls .glass-button,#interactive #mission-controls .glass-icon{width:100%;height:32px;min-height:32px;padding:0 4px;font-size:9px}#interactive #sim-estop{margin:0}#interactive #sensor-mode-bar{bottom:89px;left:12px;max-width:calc(100% - 24px)}#interactive #sensor-mode-bar .glass-button{font-size:8px;padding-inline:7px;height:24px;min-height:24px}#interactive .sensor-legend{top:157px;max-width:165px}#interactive .sensor-comparison-labels{padding-top:215px}#interactive .sensor-comparison-labels:after{bottom:125px}#interactive .human-workcell-controls .experiment-control{margin:17px 0}#interactive .precision-detail .mode-dock{display:flex!important;width:max-content!important}}
+
+#interactive .part-subtitle,#interactive .catalog-row small,#interactive .part-number{display:none}#interactive .catalog-row{min-height:40px}#interactive .part-heading{margin-top:12px}
+
+#interactive:has(.precision-detail) #editor-back{display:none}#interactive .precision-detail .mode-dock [data-mode]{pointer-events:none}
+
+/* One breadcrumb action in the stage, with a shared model footer. */
+#interactive .precision-detail #joint-exit{pointer-events:auto;height:34px;min-height:34px;padding:0 12px;font-size:10px;white-space:nowrap;border:0;background:#f9fcffb8;box-shadow:none}
+#interactive .precision-detail #part-focus-bar,#interactive .precision-detail .detail-breadcrumb{display:none!important}
+#interactive:has(.precision-detail) .detail-breadcrumb{display:none!important}
+#interactive #model-bottom{bottom:14px;left:14px;right:14px;justify-content:space-between;align-items:center;gap:8px}
+#interactive #model-bottom .dimension-toggle{position:static;inset:auto;display:block;margin:0}
+#interactive #model-bottom .glass-button{height:34px;min-height:34px;min-width:98px;padding:0 10px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:9px;line-height:1}
+#interactive #model-bottom .glass-button .ui-icon{width:12px;height:12px}
+#interactive .scene-readouts{bottom:63px;right:16px}
+#interactive .experiment-scene-hud{bottom:59px!important;max-width:calc(100% - 32px)}
+@media(max-width:760px){#interactive #model-bottom{left:12px;right:12px;bottom:12px}#interactive #model-bottom .glass-button{height:32px;min-height:32px;min-width:90px;font-size:9px}#interactive .scene-readouts{bottom:61px}#interactive .precision-detail #joint-exit{height:32px;min-height:32px;font-size:9px}}
+

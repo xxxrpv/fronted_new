@@ -1,0 +1,222 @@
+{
+  "schema": "embodex.supplied-inspection-reference/1",
+  "sourceRoot": "网站设计/EmbodiX官网-交付版/dist/cases/warehouse",
+  "upstreamRepository": "https://github.com/google-deepmind/mujoco_menagerie",
+  "upstreamCommit": "71f066ad0be9cd271f7ed58c030243ef157af9f4",
+  "sourceDirectory": "unitree_go2",
+  "copyright": "Copyright (c) 2016-2022 HangZhou YuShu TECHNOLOGY CO.,LTD. (Unitree Robotics)",
+  "sourceMeshLicense": "BSD-3-Clause",
+  "licenseScope": "The retained source visual meshes keep the complete upstream license. Procedural inspection additions are taken from the user-provided official-site source; no separate SPDX license was declared for those additions.",
+  "originalDerivationRecord": "/v8-assets/inspection-source-DERIVATION.json",
+  "sourceFiles": [
+    {
+      "path": "upstream/LICENSE",
+      "bytes": 1537,
+      "sha256": "7e2dfda59b98e38d123f539b59ecb637ffd8908d19e09f7765884a309f010d40"
+    },
+    {
+      "path": "upstream/go2.xml",
+      "bytes": 11678,
+      "sha256": "50adb09a4365293e2acdaf2010ae35a82b0f09fea18ae51806fef91e310ed04a"
+    },
+    {
+      "path": "upstream/assets/base_0.obj",
+      "bytes": 1330465,
+      "sha256": "8cdc53719002a5ee737d867904e534a6d6fa930b616bdcc1b3131e577d4e46c0"
+    },
+    {
+      "path": "upstream/assets/base_1.obj",
+      "bytes": 811791,
+      "sha256": "39d2f4724ff64dd5a0640c308fd98902a2946660a8d033ec8dbf368fd5af0dd6"
+    },
+    {
+      "path": "upstream/assets/base_2.obj",
+      "bytes": 294090,
+      "sha256": "29cae463f95d678e4ede863c36c9b19b0d356b8340412add10670d70bdcc3095"
+    },
+    {
+      "path": "upstream/assets/base_3.obj",
+      "bytes": 379093,
+      "sha256": "f51ba43bf300e68957a0c1aa83eaf3e4926f4ac7e64a0d6c33ae5d21fcbcf5f6"
+    },
+    {
+      "path": "upstream/assets/base_4.obj",
+      "bytes": 7776234,
+      "sha256": "49ddec0129546e5dd2075d5beacf7f207baa2860aeff7626818e64d2efbf3821"
+    },
+    {
+      "path": "upstream/assets/calf_0.obj",
+      "bytes": 877174,
+      "sha256": "4a818cd563c5b7e2a271504442d05fd777d38cbaa028d4a10ad29c9f87bb355e"
+    },
+    {
+      "path": "upstream/assets/calf_1.obj",
+      "bytes": 326865,
+      "sha256": "51950c3a153ae3208592df86ea11c9d6756f8f645ebca5caf6910c61aeb03817"
+    },
+    {
+      "path": "upstream/assets/calf_mirror_0.obj",
+      "bytes": 876538,
+      "sha256": "6dc0406207a1c08a5953fd5962aca1a270fd06593d30d100205e05c1b32d4af2"
+    },
+    {
+      "path": "upstream/assets/calf_mirror_1.obj",
+      "bytes": 327261,
+      "sha256": "f84f5af90b914633165beb3a5493ee499169144c5797dcf04c6eb5842f74b31a"
+    },
+    {
+      "path": "upstream/assets/foot.obj",
+      "bytes": 1144729,
+      "sha256": "df9e78a7c0110d02557439010f2a5f11f0ec4fd907b32704145dbd6aa7affc0b"
+    },
+    {
+      "path": "upstream/assets/hip_0.obj",
+      "bytes": 2863864,
+      "sha256": "cc29932ab4d251ce3f72389ec4c1f757e44eee138b87e772b648c2bc76b506cd"
+    },
+    {
+      "path": "upstream/assets/hip_1.obj",
+      "bytes": 2767918,
+      "sha256": "3fd5bd9b2ef6abe622c0739d3c67eaa1679b19b47132951972c4892a779ea7cf"
+    },
+    {
+      "path": "upstream/assets/thigh_0.obj",
+      "bytes": 2841868,
+      "sha256": "bb3edfe6a7b04f4f4dff1ce7b05d426ddce941e276cc6372fb542055893c71ec"
+    },
+    {
+      "path": "upstream/assets/thigh_1.obj",
+      "bytes": 1491320,
+      "sha256": "3a631822f9f7d2114b1b79dcdff5abf95103630abb7d91d1f3b8b18117132ed2"
+    },
+    {
+      "path": "upstream/assets/thigh_mirror_0.obj",
+      "bytes": 2817674,
+      "sha256": "07abaedce761f1dd48647384ac14ba1959276bc78d5a2a62051e8f1c6093933b"
+    },
+    {
+      "path": "upstream/assets/thigh_mirror_1.obj",
+      "bytes": 1482261,
+      "sha256": "db984a3e983eabbc9b38183427cca9ab0bb3bdb049f9eab030e06edda36579d6"
+    },
+    {
+      "path": "official/assets/concept-model/mesh-data.js",
+      "bytes": 9269354,
+      "sha256": "7ad2fb100188a173c7c16d3aa918480bc529f5e1763dc03e2a607c77ce8fe8e9"
+    },
+    {
+      "path": "official/concept-model.js",
+      "bytes": 16556,
+      "sha256": "6825c00e9a77c386b4a580162376cad8e968f4188ca69f65b697317390de4282"
+    },
+    {
+      "path": "official/concept-platform.js",
+      "bytes": 29504,
+      "sha256": "f3aa4aee3e4f7c9b51f5510522f77cc4e27103a7ae08a55342942b83342ff12a"
+    },
+    {
+      "path": "official/electronics-kit.js",
+      "bytes": 8942,
+      "sha256": "668d418afac62a69ff10f003482cc55b72a7957ee1ff7845bc2e3090e8e036d3"
+    },
+    {
+      "path": "official/sheetmetal-task.js",
+      "bytes": 2143,
+      "sha256": "b0e6635d10dc62e7fc0b97e8ea4e3e9a4261b307de3d231b16029aea57006cf2"
+    },
+    {
+      "path": "official/human-workcell.js",
+      "bytes": 23674,
+      "sha256": "e2ac47581778fc6e9ca70263fdf686b48f699a3e698194b5bfc575a3aabce10f"
+    },
+    {
+      "path": "official/assembly-detail.js",
+      "bytes": 31785,
+      "sha256": "c41ca4e12b8d8259936a1d3b2f30adbb8413e0c1785fc9703cbfe154f7acce68"
+    },
+    {
+      "path": "official/case-polish.css",
+      "bytes": 5950,
+      "sha256": "a40460c268605495f6b6f67c83f80c2a9bb9757610b431d355cae01d0e450b49"
+    },
+    {
+      "path": "official/collision-world.js",
+      "bytes": 8752,
+      "sha256": "45f94f33223d92399ab19e76a3f7d30596501e3cace520ca873caca334ce071a"
+    },
+    {
+      "path": "official/experiment-controls.js",
+      "bytes": 32709,
+      "sha256": "18afe6ba246e23e5fa2e63a49e18284fb25cda7f972745a957f21c11430e30c8"
+    },
+    {
+      "path": "official/industrial-workspace.js",
+      "bytes": 51072,
+      "sha256": "d1760ab81fca31237856a632fd4e102121de521dbae278a449fd486b101c6d96"
+    },
+    {
+      "path": "official/industrial-workspace.css",
+      "bytes": 16584,
+      "sha256": "5ef3f3841a4d0f1991b7ab913876fdbc67a1fe41a714f9abff9ac6f437af512c"
+    },
+    {
+      "path": "official/industrial-arm.js",
+      "bytes": 44208,
+      "sha256": "63a74095f641ed1273890f925d3b6c964939f4ddf573aa54ae5e7d431cc24422"
+    },
+    {
+      "path": "official/industrial-aerial.js",
+      "bytes": 20475,
+      "sha256": "488af3493138ce73a2c631d355c6f152ee4772fc3c4fd2e13fb206b7f91ed515"
+    },
+    {
+      "path": "official/industrial-mobile.js",
+      "bytes": 51347,
+      "sha256": "3b7cf9634db9a2d40b3b934e03729597542eb837b1bdbaa117d164b6bd3ea836"
+    },
+    {
+      "path": "official/industrial-ui.js",
+      "bytes": 9261,
+      "sha256": "1aec601c882724190bd2004cc6978b43c74f5eb70c304ef21932084828fc1bcc"
+    },
+    {
+      "path": "official/aerial-wind-task.js",
+      "bytes": 26716,
+      "sha256": "9679810f89c29f3243188740e80a09612c7055dd4c75d622640cbe2d64902e75"
+    },
+    {
+      "path": "official/robot-view.js",
+      "bytes": 45853,
+      "sha256": "dbc4dc5854c182f67b5ca67138af06a118c1ea325e51b1df051cd0e34d94f62f"
+    },
+    {
+      "path": "official/sim-view.js",
+      "bytes": 110011,
+      "sha256": "4020c2423cf3b7ca24d1a4fcd2f9f8d9d8c87ff5a7e71579c60f06361e5a820b"
+    },
+    {
+      "path": "official/workbench-theme.css",
+      "bytes": 24456,
+      "sha256": "b505a36fd4d5c6ca262226f1c927e8e50c39eb2de83a2f9ec7de10399e172f72"
+    },
+    {
+      "path": "official/sensor-renderer.js",
+      "bytes": 16065,
+      "sha256": "e3bf698f5f759a46feff5cde1b1765106ea4c412ff840d8505badc32c2a1333a"
+    }
+  ],
+  "generatedFile": {
+    "name": "inspection-reference.glb",
+    "size": 13151488,
+    "sha256": "d6f6104ae8b2c90b00c9db5bbac0e4d5c6270323022adf8fe4646e2b3c971c66"
+  },
+  "conversion": {
+    "geometrySimplified": false,
+    "capturedSourceTransforms": true,
+    "sourceVisibleTriangleCountPreserved": true,
+    "skippedInvisibleNodes": true,
+    "fabricatedInternals": false,
+    "configuration": "Official source default standing configuration, attachments enabled, optional top lidar disabled, hypothetical payload hidden"
+  },
+  "attribution": "Original Unitree Robotics geometry distributed through Google DeepMind MuJoCo Menagerie; modified official inspection concept supplied by the user. No source-author endorsement is implied."
+}

@@ -1,0 +1,108 @@
+.v8 .vrequirement-brief {
+  display: grid;
+  gap: 13px;
+  margin-top: 25px;
+  min-width: 0;
+}
+.v8 .vrequirement-group {
+  padding: 0;
+  border: 1px solid #dee4ea;
+  border-radius: 14px;
+  background: #ffffffb8;
+  overflow: hidden;
+}
+.v8 .vrequirement-group > summary {
+  padding: 16px 18px;
+  color: #535f6b;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style-position: inside;
+  user-select: none;
+}
+.v8 .vrequirement-group > summary > span {
+  float: right;
+  font-size: 11px;
+  font-weight: 400;
+  color: #8997a5;
+}
+.v8 .vrequirement-group > summary:focus-visible {
+  outline: 3px solid #abb4be;
+  outline-offset: -4px;
+  border-radius: 13px;
+}
+.v8 .vrequirement-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 5px 18px 19px;
+  min-width: 0;
+}
+.v8 .vrequirement-fields > label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+  margin: 0;
+  font-size: 12px;
+  color: #677686;
+}
+.v8 .vrequirement-fields > label:first-child:last-child,
+.v8 .vrequirement-fields > label:last-child:nth-child(odd) {
+  grid-column: 1/-1;
+}
+.v8 .vrequirement-fields textarea {
+  display: block;
+  width: 100%;
+  min-height: 78px;
+  padding: 12px 13px;
+  border: 1px solid #dae0e7;
+  border-radius: 10px;
+  background: #ffffffc9;
+  color: #434e58;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.8;
+  resize: vertical;
+  box-sizing: border-box;
+  box-shadow: inset 0 1px 3px #3c444d05;
+}
+.v8 .vrequirement-fields textarea::placeholder {
+  color: #909daa;
+  font-size: 12px;
+}
+.v8 .vrequirement-fields textarea:focus {
+  border-color: #a8b2bc;
+  outline: 3px solid #a5afb926;
+  outline-offset: 1px;
+}
+@media (max-width: 767px) {
+  .v8 .vrequirement-brief {
+    gap: 11px;
+    margin-top: 20px;
+  }
+  .v8 .vrequirement-group > summary {
+    padding: 15px;
+    font-size: 13px;
+  }
+  .v8 .vrequirement-fields {
+    grid-template-columns: 1fr;
+    padding: 4px 14px 16px;
+    gap: 16px;
+  }
+  .v8 .vrequirement-fields > label {
+    grid-column: 1 !important;
+  }
+  .v8 .vrequirement-fields textarea {
+    font-size: 14px;
+    min-height: 85px;
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .v8 .vrequirement-group {
+    background: #f8f9fa;
+  }
+  .v8 .vrequirement-fields textarea {
+    background: #fff;
+  }
+}

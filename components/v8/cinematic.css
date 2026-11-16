@@ -1,0 +1,218 @@
+.mx-cinematic {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background: #e4e9ee;
+}
+.mx-cinematic canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mx-three-host {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+.mx-showcase-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 11px;
+  right: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  pointer-events: none;
+  color: #668399;
+}
+.mx-showcase-caption > span {
+  font-size: 9px;
+  padding: 4px 8px;
+  border: 1px solid #ffffffb3;
+  border-radius: 20px;
+  background: #f6fbffc2;
+  backdrop-filter: blur(16px);
+}
+.mx-showcase-caption > strong {
+  font-size: 9px;
+  font-weight: 450;
+  color: #738a9a;
+  background: #f4f9fcc7;
+  border: 1px solid #ffffffb3;
+  padding: 4px 8px;
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+}
+.mx-cinematic-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #e4e9ee;
+  color: #6a7a8a;
+  font-size: 12px;
+}
+.mx-journey-prompt {
+  position: absolute;
+  left: 9%;
+  right: 9%;
+  top: 39%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 118px;
+  padding: 25px 27px;
+  background: #ffffffe0;
+  border: 1px solid #fffffff0;
+  border-radius: 25px;
+  box-shadow:
+    inset 0 1px 2px #fff,
+    0 16px 45px #252d3624;
+  backdrop-filter: blur(28px);
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  transition:
+    opacity 0.9s,
+    transform 1.2s;
+  pointer-events: none;
+  color: #353c44;
+}
+.mx-journey-prompt.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.mx-journey-prompt p {
+  font-size: clamp(16px, 1.6vw, 23px);
+  line-height: 1.8;
+  font-weight: 450;
+  margin: 0;
+  flex: 1;
+}
+.mx-journey-prompt p i {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background: #768595;
+  vertical-align: -2px;
+  margin-left: 3px;
+  animation: mx-caret 1s steps(1) infinite;
+}
+.mx-prompt-symbol {
+  font-size: 26px;
+  color: #728293;
+}
+.mx-prompt-send {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid #bcc3cb;
+  font-size: 22px;
+  background: #f5f8fa;
+  color: #667585;
+}
+.mx-journey-controls {
+  position: absolute;
+  left: 38px;
+  right: 38px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mx-journey-dots {
+  display: flex;
+  gap: 7px;
+  padding: 5px 9px;
+  background: #ffffffa6;
+  border: 1px solid #ffffffc4;
+  border-radius: 25px;
+  backdrop-filter: blur(20px);
+  box-shadow: inset 0 1px #fff;
+}
+.mx-journey-dots button {
+  width: 26px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.mx-journey-dots i {
+  width: 5px;
+  height: 5px;
+  border-radius: 99px;
+  background: #81909e;
+  transition:
+    width 0.3s,
+    background 0.3s;
+}
+.mx-journey-dots [aria-current="step"] i {
+  width: 21px;
+  background: #485665;
+}
+.mx-motion-toggle {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  background: #ffffffad;
+  border: 1px solid #ffffffe0;
+  border-radius: 50%;
+  backdrop-filter: blur(20px);
+  cursor: pointer;
+  color: #445260;
+}
+.mx-motion-toggle svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+@keyframes mx-caret {
+  50% {
+    opacity: 0;
+  }
+}
+@media (max-width: 700px) {
+  .mx-journey-prompt {
+    padding: 15px 18px;
+    min-height: 78px;
+    gap: 12px;
+    left: 7%;
+    right: 7%;
+    border-radius: 20px;
+    top: 34%;
+  }
+  .mx-journey-prompt p {
+    font-size: 15px;
+  }
+  .mx-journey-controls {
+    left: 20px;
+    right: 20px;
+    bottom: 17px;
+  }
+  .mx-prompt-send {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mx-journey-prompt,
+  .mx-journey-dots i {
+    transition: none;
+  }
+  .mx-journey-prompt p i {
+    animation: none;
+  }
+}

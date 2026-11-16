@@ -1,0 +1,76 @@
+.viewer {position:relative;width:100%;height:100%;min-height:0;overflow:hidden;background:#ecf0f3;border:1px solid #e1e6ec;border-radius:18px;color:#21252a}
+.viewport {position:absolute;inset:0;touch-action:none;outline-offset:-4px}
+.viewport:focus-visible {outline:3px solid #728292}
+.viewport canvas {display:block;width:100%;height:100%}
+.chrome {position:absolute;inset:0;pointer-events:none}
+.topline {position:absolute;top:18px;left:20px;pointer-events:none}
+.format {font:600 10px/1.1 ui-monospace,monospace;letter-spacing:.14em;background:#fffc;border:1px solid #e1e6ec;padding:8px 10px;border-radius:6px;color:#606e7d}
+.selected {margin-left:8px;font-size:12px;color:#728292;background:#f1f3f6;padding:6px 10px;border-radius:6px}
+/* The supplied site anchors its mode dock at upper left and camera tools at upper right. */
+.modeDock {position:absolute;z-index:4;top:17px;left:18px;display:flex;align-items:center;gap:2px;width:max-content;max-width:calc(100% - 36px);padding:5px;border-radius:11px;background: #ffffffb8;border:1px solid #fffffff2;box-shadow:inset 0 1px 0 #fff,0 0 0 1px #d2dae28c,0 4px 16px #505b670b;backdrop-filter:blur(18px) saturate(1.12);pointer-events:auto}
+.modeDock button {display:flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:8px 12px;border:1px solid transparent;border-radius:7px;background:transparent;color:#758595;font-size:12px;line-height:1.35;white-space:nowrap;cursor:pointer}
+.modeDock button:hover {background:#ffffffb8;color:#5d6a78}
+.modeDock button[aria-pressed="true"],.modeDock button[aria-expanded="true"] {border-color:#d5dce4;background: #ffffffb8;box-shadow:inset 0 1px 0 #fff;color:#596674}
+.modeDock svg {width:15px;height:15px;flex:none}
+.modeDock button:focus-visible,.partsMenu select:focus-visible,.explodeRange input:focus-visible,.cameraTools button:focus-visible,.inspectionInfo button:focus-visible,.inspectionInfo summary:focus-visible {outline:3px solid #728292;outline-offset:2px}
+.explodeRange {position:absolute;z-index:3;top:77px;left:18px;display:flex;align-items:center;gap:10px;width:272px;max-width:calc(100% - 84px);padding:9px 12px;border:1px solid #d7dee6;border-top-color:#fff;border-radius:9px;background: #ffffffb8;box-shadow:inset 0 1px 0 #fff,0 5px 18px #49545f09;backdrop-filter:blur(18px);color:#6d7d8e;font-size:11px;pointer-events:auto}
+.explodeRange input {flex:1;min-width:0;width:120px;height:20px;accent-color:#728292;cursor:pointer}
+.explodeRange output {min-width:31px;color:#566370;font-variant-numeric:tabular-nums}
+.partsMenu {position:absolute;z-index:5;top:77px;left:18px;display:flex;flex-direction:column;gap:10px;width:290px;max-width:calc(100% - 80px);padding:13px 14px;border:1px solid #d2dae2;border-top-color:#fff;border-radius:11px;background: #ffffffb8;box-shadow:inset 0 1px 0 #fff,0 10px 28px #49545f13;backdrop-filter:blur(20px);pointer-events:auto}
+.partsMenu[hidden] {display:none}
+.partsMenu.belowSlider {top:131px}
+.partPicker {display:flex;flex-direction:column;gap:8px;font-size:11px;color:#738393}
+.partPicker select {width:100%;min-width:0;min-height:36px;padding:7px 9px;border:1px solid #d5dce4;border-radius:7px;background:#fcfcfc;color:#4d5864;font:inherit;font-size:12px;cursor:pointer}
+.partCount {font-size:11px;line-height:1.6;color:#768595;overflow-wrap:anywhere}
+.cameraTools {position:absolute;z-index:4;top:95px;right:18px;display:grid;gap:7px}
+.cameraTools button {display:grid;place-items:center;width:34px;height:35px;padding:7px;border:1px solid #fffffff0;border-radius:8px;background: #ffffffb8;color:#6a7a8a;box-shadow:inset 0 1px 0 #fff,0 0 0 1px #d2dae29c,0 3px 10px #49545f08;backdrop-filter:blur(16px);font:20px/1 sans-serif;cursor:pointer}
+.cameraTools button:hover {background: #ffffffb8;color:#596674;border-color:#d9e0e7}
+.cameraTools button:active {transform:translateY(1px)}
+.cameraTools svg {width:16px;height:16px}
+.sensorLegend {position:absolute;z-index:3;left:18px;bottom:18px;display:flex;align-items:center;gap:7px;max-width:calc(100% - 36px);padding:7px 11px;border:1px solid #d6dde4;border-top-color:#fff;border-radius:7px;background:#fbfcfcea;backdrop-filter:blur(14px);color:#647281;font-size:11px;line-height:1.6;pointer-events:none}
+.sensorLegendDot {width:5px;height:5px;background:#798898;border-radius:50%;flex:none}
+.sensorComparison {position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:1fr 1fr;align-items:start;padding-top:78px;pointer-events:none}
+.sensorComparison>span {justify-self:center;padding:5px 9px;border:1px solid #c9cfd5;border-radius:6px;background:#f8fafbe8;color:#62707f;font-size:10px}
+.sensorComparison>i {position:absolute;top:76px;bottom:58px;left:50%;width:1px;background:#d4dce3;box-shadow:0 0 0 1px #62718020}
+.inspectionInfo {position:absolute;z-index:3;right:18px;bottom:20px;width:276px;max-width:calc(100% - 36px);display:flex;flex-direction:column;gap:7px;padding:14px 15px;border:1px solid #d2dae2;border-top-color:#fff;border-radius:12px;background: #ffffffb8;box-shadow:inset 0 1px 0 #fff,0 8px 28px #444e5812;backdrop-filter:blur(20px);color:#454f59}
+.inspectionHeading {display:flex;align-items:center;justify-content:space-between;gap:10px}
+.inspectionHeading strong {font-size:12px;line-height:1.6;font-weight:600}
+.inspectionHeading button {display:grid;place-items:center;flex:none;width:30px;height:30px;border:1px solid #d9e4ef;border-radius:9px;padding:6px;cursor:pointer;color:#81909e;background:#ffffff99;line-height:1}
+.inspectionHeading button:hover{background:#eaf3fb}
+.inspectionHeading button:active{background:#e0edf7}
+.inspectionInfo>span {font-size:11px;line-height:1.7;color:#647281}
+.inspectionInfo small {font-size:10px;color:#82909e;line-height:1.7}
+.inspectionInfo details {font-size:11px;color:#6c7c8c;line-height:1.7}
+.inspectionInfo summary {cursor:pointer}
+.inspectionInfo code {display:block;margin-top:4px;font-size:10px;word-break:break-all;color:#5c6a78}
+.focusPart {display:flex;align-items:center;justify-content:space-between;margin-top:2px;padding:7px 10px;border:1px solid #d2dbe3;border-radius:7px;background:#f4f6f8cf;box-shadow:inset 0 1px 0 #fff;color:#5a6775;cursor:pointer;font-size:11px}
+.focusPart:hover {background:#edf0f4cf}
+.overlay {position:absolute;z-index:6;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:30px;background:#f5f6f8f5;text-align:center}
+.overlay strong {font-size:15px;font-weight:600}
+.overlay p,.overlay>span:last-child {max-width:370px;font-size:13px;line-height:1.8;color:#6a7a8a;margin:0}
+.overlay button {background:#fff;border:1px solid #ccd2d7;border-radius:8px;padding:9px 16px;color:#728292;cursor:pointer;font:inherit}
+.overlay button:focus-visible {outline:3px solid #728292;outline-offset:2px}
+.spinner {width:24px;height:24px;border:2px solid #dae0e7;border-top-color:#728292;border-radius:50%;animation:spin 1s linear infinite}
+.compact {min-height:220px;border-radius:12px}
+.compact .modeDock {top:10px;left:10px;padding:3px}
+.compact .modeDock button {min-height:30px;padding:6px 8px;font-size:11px}
+.compact .cameraTools {top:68px;right:11px;gap:6px}
+.compact .cameraTools button {width:29px;height:30px;padding:6px}
+:global(.vstudio-canvas) .viewer {min-height:0;border:0;border-radius:0}
+:global(.vstudio-canvas) .format {display:none}
+@keyframes spin {to {transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce) {.spinner {animation:none}}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more) {.modeDock,.explodeRange,.partsMenu,.cameraTools button,.inspectionInfo {background:#fafbfc;backdrop-filter:none;border-color:#adb6c0}}
+@media(max-width:767px) {
+  .viewer {min-height:350px;border-radius:12px}
+  .modeDock {top:12px;left:12px;max-width:calc(100% - 24px);padding:4px;gap:1px;border-radius:10px}
+  .modeDock button {min-height:35px;padding:7px 9px;font-size:12px;gap:5px}
+  .modeDock svg {width:14px;height:14px}
+  .cameraTools {top:90px;right:12px;gap:7px}
+  .cameraTools button {width:31px;height:34px;padding:6px}
+  .explodeRange {top:70px;left:12px;width:244px;max-width:calc(100% - 70px);gap:8px;padding:8px 10px}
+  .partsMenu {top:70px;left:12px;max-width:calc(100% - 64px);width:270px}
+  .partsMenu.belowSlider {top:122px}
+  .inspectionInfo {right:12px;bottom:16px;width:252px;max-width:calc(100% - 24px);padding:11px 12px;gap:6px}
+  .compact {min-height:220px}
+}
